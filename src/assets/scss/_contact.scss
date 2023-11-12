@@ -1,0 +1,120 @@
+.contact {
+  grid-column: container-start / container-end;
+  border-top: 1px solid #cecece;
+
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10rem 4vw;
+  background-color: var(--background-light);
+
+  .content {
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: var(--text-color);
+    gap: 4rem;
+    // filter: drop-shadow(0px 8px 24px rgba(144, 188, 230, 0.5));
+
+    .info {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        text-align: start;
+      }
+
+      .info-details {
+        margin-top: 2rem;
+
+        .detail {
+          margin: 0.7rem 0;
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+          gap: 0.7rem;
+
+          .google-map {
+            margin-bottom: 20px;
+          }
+
+          .contact-icon {
+            width: 28px;
+          }
+        }
+      }
+      .info-img {
+        margin-top: 4rem;
+        img {
+          width: 350px;
+        }
+      }
+    }
+
+    .form {
+      background-color: var(--background);
+      color: var(--text-color);
+      border-radius: 30px;
+      padding: 2rem;
+      min-width: 400px;
+      h2 {
+        padding-bottom: 1rem;
+      }
+      .btn {
+        margin-top: 2rem;
+        width: 100%;
+      }
+    }
+  }
+
+  .color-red {
+    color: hsl(4, 71%, 50%);
+  }
+
+  .color-blue {
+    color: hsl(207, 56%, 45%);
+  }
+
+  .contact__error {
+    margin-top: 10px;
+  }
+
+  //*-*-*-*-*-*-*-*-*-*-- The 800px Mark Break Point *-*-*-*-*-*-*-*-*-*-*
+  @media screen and (max-width: 900px) {
+    .content {
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      width: 70%;
+      .info {
+        align-items: center;
+        .info-img {
+          margin-top: 3rem;
+          img {
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 550px) {
+    padding: 9rem 0;
+
+    .content {
+      width: 100%;
+
+      .form {
+        min-width: 0px;
+        border-radius: 0;
+      }
+
+      .info {
+        img {
+          width: 150px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,202 @@
+.login {
+  grid-column: container-start / container-end;
+  border-top: 1px solid #cecece;
+  padding: 20vh 4vw;
+
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+
+  .content {
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: #3c4043;
+    gap: 4rem;
+
+    .form {
+      background-color: #d6e2db;
+      color: #3c4043;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2rem;
+
+      .fields {
+        width: 100%;
+        margin: 2rem 0 0 0;
+      }
+      .btn {
+        width: 100%;
+        margin: 1rem 0 2rem 0;
+      }
+      .form-control {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.5rem;
+        gap: 5px;
+
+        label {
+          display: grid;
+          grid-template-columns: 1em auto;
+          gap: 0.5em;
+          cursor: pointer;
+          font-size: 16px;
+
+          // CHECK BOX LOGIN
+          input[type="checkbox"].checkbox-login {
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 5px 0;
+            cursor: pointer;
+
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 1.9px solid currentColor;
+            border-radius: 0.15em;
+            transform: translateY(-0.075em);
+
+            display: grid;
+            place-content: center;
+          }
+
+          input[type="checkbox"].checkbox-login::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            clip-path: polygon(
+              14% 44%,
+              0 65%,
+              50% 100%,
+              100% 16%,
+              80% 0%,
+              43% 62%
+            );
+            transform: scale(0);
+            transform-origin: bottom left;
+            transition: 120ms transform ease-in-out;
+            /* Windows High Contrast Mode */
+            background-color: CanvasText;
+            background-color: #3c4043;
+          }
+
+          input[type="checkbox"].checkbox-login:checked::before {
+            transform: scale(1);
+          }
+
+          input[type="checkbox"].checkbox-login:focus {
+            /* outline: max(2px, 0.15em) solid currentColor; */
+            outline-offset: max(2px, 0.15em);
+          }
+        }
+
+        a {
+          text-decoration: none;
+          transition: 0.3s;
+          cursor: pointer;
+          letter-spacing: 0;
+        }
+      }
+      .login-options {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+        gap: 10px;
+        width: 100%;
+        h4 {
+          font-weight: 400;
+          font-size: font-size(font-size-small);
+          position: relative;
+          text-align: center;
+        }
+        h4::before {
+          content: "";
+          display: block;
+          width: 28%;
+          height: 1.5px;
+          position: absolute;
+          left: 0;
+          top: 50%;
+        }
+        h4::after {
+          content: "";
+          display: block;
+          width: 28%;
+          height: 1.5px;
+          position: absolute;
+          right: 0;
+          top: 50%;
+        }
+        .img-container {
+          background-color: #fff;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 0px;
+          height: 47.25px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h3 {
+        font-weight: 300;
+        letter-spacing: -0.07em;
+        span {
+          letter-spacing: normal;
+          padding-left: 3px;
+        }
+      }
+      .btn {
+        align-self: center;
+        margin-top: 5rem;
+      }
+      img {
+        margin-top: 12rem;
+        width: 300px;
+      }
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .content {
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column-reverse;
+      width: 70%;
+      .info {
+        text-align: center;
+        .btn {
+          margin-top: 2rem;
+        }
+        img {
+          align-self: center;
+          margin-top: 3rem;
+          width: 200px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .content {
+      width: 100%;
+      .info {
+        img {
+          width: 150px;
+        }
+      }
+    }
+  }
+}

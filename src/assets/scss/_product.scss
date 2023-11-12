@@ -1,0 +1,117 @@
+@import "./variables";
+
+.product-page-container {
+  grid-column: container-start / container-end;
+  padding: 5vh 0;
+  background-color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .product-section-container {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding-top: 7rem;
+    .right {
+      margin: 0 50px;
+    }
+    .left {
+      img {
+        width: 400px;
+      }
+    }
+  }
+  .product-section-container.row-reverse {
+    flex-direction: row-reverse;
+    // .right {
+    //   margin-left: 0px;
+    // }
+    .left {
+      margin: 0 100px;
+      img {
+        width: 300px;
+      }
+    }
+  }
+}
+
+.para {
+  h2 {
+    padding-top: 20px;
+    font-size: 21px;
+    font-weight: 400;
+  }
+  p {
+    color: var(--text-color);
+    text-align: start;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+  .link {
+    color: var(--blue);
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+  }
+  .link:hover {
+    color: var(--blue-hover);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .product-page-container {
+    .product-section-container {
+      flex-direction: column;
+      gap: 1rem;
+      .right {
+        margin-left: 60px;
+      }
+      .left {
+        align-self: flex-end;
+        img {
+          width: 300px;
+        }
+      }
+    }
+    .product-section-container.row-reverse {
+      flex-direction: column;
+
+      .right {
+        margin-left: 60px;
+      }
+      .left {
+        align-self: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-page-container {
+    .product-section-container {
+      .right {
+        margin-left: 20px;
+      }
+      .left {
+        align-self: flex-end;
+        img {
+          width: 300px;
+        }
+      }
+    }
+    .product-section-container.row-reverse {
+      flex-direction: column;
+
+      .right {
+        margin-left: 20px;
+      }
+      .left {
+        align-self: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.get-started {
+  background-color: var(--pink);
+  display: flex;
+  margin: 5rem 4rem 0 4rem;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem 4rem;
+  .left {
+    flex: 3;
+    h1 {
+      color: var(--text-color);
+    }
+    p {
+      color: var(--text-color);
+      text-align: start;
+    }
+  }
+  .right {
+    flex: 1;
+    .btn {
+      border-radius: 20px;
+      background-color: var(--on-pink);
+      color: var(--pink);
+      font-size: calc(1.2rem + 0.4vw);
+      padding: calc(0.5rem + 1vh) calc(1rem + 1vw);
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+.red-bg {
+  background-color: var(--red);
+}
+.btn.red-text {
+  color: var(--red) !important;
+  background-color: var(--on-red) !important;
+}
+
+.green-bg {
+  background-color: var(--green);
+}
+.btn.green-text {
+  color: var(--green) !important;
+  background-color: var(--on-green) !important;
+}
+@media screen and (max-width: 800px) {
+  .get-started {
+    flex-direction: column;
+    text-align: center;
+    margin: 5rem 0 0 0;
+
+    .left {
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .get-started {
+    padding: 2rem 1rem;
+  }
+}

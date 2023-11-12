@@ -1,0 +1,44 @@
+@import "./variables";
+
+.about-us {
+  grid-column: container-start / container-end;
+  color: var(--text-color);
+  background-color: var(--background-light);
+  padding: 20vh 4vw 10vh 4vw;
+  .about-us__title {
+    margin-bottom: 1rem;
+  }
+  .about-us__content {
+    display: flex;
+    align-items: start;
+    gap: 4rem;
+
+    p {
+      text-align: start;
+    }
+    img {
+      max-width: 400px;
+    }
+  }
+  .btns-container {
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .about-us {
+    padding: 10vh 4vw 10vh 4vw;
+
+    .about-us__title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .about-us__content {
+      flex-direction: column-reverse;
+      img {
+        max-width: 300px;
+        align-self: center;
+      }
+    }
+  }
+}

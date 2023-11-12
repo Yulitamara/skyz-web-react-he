@@ -1,0 +1,324 @@
+@import "./variables";
+@import "./navigation";
+@import "./blogs";
+@import "./about";
+@import "./hero";
+@import "./products";
+@import "./about-us";
+@import "./footer";
+@import "./login";
+@import "./form";
+@import "./contact";
+@import "./privacy-policy";
+@import "./product";
+@import "./advantages";
+// @import "./skyz-demo";
+// @import "./phone-demo";
+@import "./get-started";
+// @import "./filters";
+// @import "./table";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+html body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--background-light);
+}
+.language-container {
+  grid-column: container-start / container-end;
+}
+.lang-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+////// Scrollbar //////
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  // display: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #006493;
+  background: #fff;
+  background-color: #f6f8fc;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #e2e2e5;
+
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 33px;
+  font-weight: 300;
+  color: var(--text-color);
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  color: var(--text-color);
+}
+h3 {
+  font-size: 19px;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+p {
+  font-size: calc(1.5rem + 0.4vw);
+  text-align: center;
+  color: var(--text-color);
+}
+
+textarea {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+
+.active {
+  display: none;
+}
+
+.small-chip {
+  font-size: 14px;
+  gap: 1rem;
+  padding: 2px 8px;
+  border-radius: 4rem;
+  width: fit-content;
+  min-width: 50px;
+
+  text-align: center;
+  cursor: pointer;
+}
+.small-chip.green {
+  color: #43493e;
+  background-color: #cad7bd;
+}
+.small-chip.red {
+  color: #690005;
+  background-color: #ffb4ab;
+}
+.stop-icon {
+  color: #aacfeda1;
+  font-variation-settings: "FILL" 1, "wght" 100, "GRAD" 0, "opsz" 48;
+  font-size: 14px;
+}
+.fill-icon {
+  font-variation-settings: "FILL" 1, "wght" 100, "GRAD" 0, "opsz" 48;
+  color: rgb(81, 112, 224);
+  cursor: pointer;
+}
+.round-btn {
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.round-btn-secondary {
+  background-color: #c2e7ff;
+  color: #000000;
+  transition: all 0.2s ease-in-out;
+}
+.flex-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.darkmode-toggle {
+  background-color: transparent;
+  border: none 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+// TAGS
+.tag {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 2rem;
+  padding: 4px 8px;
+  border-radius: 2rem;
+  width: 110px;
+  height: 30px;
+  background-color: #cae6ff;
+  color: #001e30;
+  cursor: pointer;
+}
+.tag:hover {
+  background-color: #b5d0e7;
+}
+
+.tag.green {
+  background-color: #8cf9ab;
+  color: #213b07;
+}
+
+.tag.green:hover {
+  background-color: #78e798;
+}
+
+.tag.red {
+  background: #ffdad6;
+  color: #2d1516;
+}
+
+.tag.red:hover {
+  background: #eccabf;
+}
+.icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.bigger-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.smaller-icon {
+  position: absolute;
+  top: 0;
+  left: -13px;
+  font-size: 20px;
+  border-radius: 180px;
+  z-index: 2;
+  cursor: pointer;
+  background-color: #cae6ff;
+  color: #444746;
+}
+
+.smaller-icon:hover {
+  background-color: #bcd7ef;
+}
+
+.smaller-icon.green {
+  background-color: #8cf9ab;
+  color: #213b07;
+}
+
+.smaller-icon.green:hover {
+  background-color: #78e798;
+}
+
+.smaller-icon.red {
+  background: #ffdad6;
+  color: #2d1516;
+}
+
+.smaller-icon.red:hover {
+  background: #eccabf;
+}
+
+.App {
+  max-width: 2000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:
+    [container-start] 1fr [center-start] repeat(
+      6,
+      [col-start] minmax(min-content, 16.66667rem) [col-end]
+    )
+    [center-end] 1fr [container-end];
+  grid-template-rows: repeat(9, min-content);
+}
+
+/* Btns */
+.btns-container {
+  display: flex;
+  gap: 2rem;
+  z-index: 9;
+
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.btn-primary {
+  font-size: 18px;
+  font-weight: 500;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  padding: 16px 48px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 15px;
+  }
+}
+
+.btn-primary:hover {
+  box-shadow: 2px 2px 5px rgba(67, 72, 207, 0.333);
+}
+
+.btn-secondary {
+  font-size: 18px;
+
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  color: var(--background);
+  background-color: var(--blue);
+  transition: all 0.3s ease-in-out;
+  padding: 16px 48px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 15px;
+  }
+}
+.btn-secondary:hover {
+  background-color: var(--blue-hover);
+}
+
+.btn-orange {
+  background-color: var(--secondary);
+  color: var(--text-color-on-secondary);
+  font-size: calc(1.2rem + 0.4vw);
+  padding: calc(0.5rem + 1vh) calc(1rem + 1vw);
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.btn-orange:hover {
+  background-color: var(--secondary-hover);
+}

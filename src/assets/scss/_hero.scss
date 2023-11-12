@@ -1,0 +1,68 @@
+@import "./variables";
+
+.hero {
+  grid-column: container-start / container-end;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 14rem 4vw 8rem 4vw;
+  background-color: var(--background);
+  min-height: 90vh;
+  color: var(--text-color);
+
+  h1 {
+    font-size: 7rem;
+    font-weight: 600;
+  }
+
+  h1.span {
+    letter-spacing: normal;
+    padding-left: 3px;
+  }
+
+  p {
+    font-size: 28px;
+    font-weight: 200;
+    margin-bottom: 10rem;
+  }
+
+  p .dot {
+    background-color: var(--blue);
+    width: 9px;
+    height: 9px;
+    margin-top: 5px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hero {
+    h1 {
+      font-size: 5.3rem;
+    }
+    p {
+      padding: 1rem 4rem;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .hero {
+    h1 {
+      font-size: 4.5rem;
+    }
+  }
+}
+@media screen and (max-width: 330px) {
+  .hero {
+    padding: 10rem 4vw 0 4vw;
+
+    h1 {
+      font-size: 3.5rem;
+    }
+    p {
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.advantages {
+  grid-column: container-start/container-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 2rem;
+  place-content: center;
+  padding: 1vh 4vw 6vh 4vw;
+  background-color: var(--white);
+
+  .advantage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3vh;
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    h2 {
+      text-align: center;
+      font-size: 23px;
+    }
+    p {
+      font-size: 19px;
+      //   height: 140px;
+    }
+    .icon-container {
+      background-color: var(--pink);
+      padding: 0.5rem;
+      border-radius: 180px;
+      span {
+        font-size: 40px;
+        color: var(--on-pink);
+      }
+    }
+  }
+}
