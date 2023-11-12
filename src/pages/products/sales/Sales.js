@@ -230,7 +230,7 @@ const Sales = () => {
               <h2>{t("sales-t-15")}</h2>
               <p>{t("sales-p-15")}</p>
               <Link
-                to="/products/skyz-sales/reports-and-dashboards/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzsales/דוחות-ודשבורד-מכירות/"
                 className="link"
               >
                 {t("learn-more")}...

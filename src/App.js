@@ -165,7 +165,7 @@ function App() {
               element={<ForecastSales />}
             />
             <Route
-              path="/products/skyz-sales/reports-and-dashboards/"
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzsales/דוחות-ודשבורד-מכירות/"
               element={<ReportsAndDashboards />}
             />
 
