@@ -52,13 +52,22 @@ const AboutUs = () => {
       </div>
 
       <div className="btns-container">
-        <Link to="/privacy" className="small-btn">
+        <Link
+          to="/skyzcrm-ניהול-קשרי-לקוחות/אודות-skyzcrm/privacy-policy/"
+          className="small-btn"
+        >
           Privacy Policy
         </Link>
-        <Link to="/terms-of-service" className="small-btn">
+        <Link
+          to="/skyzcrm-ניהול-קשרי-לקוחות/אודות-skyzcrm/terms-of-service/"
+          className="small-btn"
+        >
           Terms of Service
         </Link>
-        <Link to="/cookie-policy" className="small-btn">
+        <Link
+          to="/skyzcrm-ניהול-קשרי-לקוחות/אודות-skyzcrm/cookie-policy/"
+          className="small-btn"
+        >
           Cookie Policy
         </Link>
       </div>

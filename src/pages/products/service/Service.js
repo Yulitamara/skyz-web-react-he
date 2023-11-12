@@ -21,7 +21,7 @@ const Service = () => {
               <h2>{t("service-t-1")}</h2>
               <p>{t("service-p-1")}</p>
               <Link
-                to="/products/skyz-service/customer-service-calls-mgmt/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/ניהול-קריאות-שירות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -31,7 +31,7 @@ const Service = () => {
               <h2>{t("service-t-2")}</h2>
               <p>{t("service-p-2")}</p>
               <Link
-                to="/products/skyz-service/customer-service-events-mgmt/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/ניהול-אירועי-שירות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -41,7 +41,7 @@ const Service = () => {
               <h2>{t("service-t-3")}</h2>
               <p>{t("service-p-3")}</p>
               <Link
-                to="/products/skyz-service/tasks-management/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/ניהול-משימות-שירות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -62,7 +62,7 @@ const Service = () => {
               <h2>{t("service-t-4")}</h2>
               <p>{t("service-p-4")}</p>
               <Link
-                to="/products/skyz-service/service-level-agreement-sla/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/ניהול-חוזי-שירות-sla/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -72,7 +72,7 @@ const Service = () => {
               <h2>{t("service-t-5")}</h2>
               <p>{t("service-p-5")}</p>
               <Link
-                to="/products/skyz-service/field-based-service-mgmt/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/ניהול-שירות-שטח/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -82,7 +82,7 @@ const Service = () => {
               <h2>{t("service-t-6")}</h2>
               <p>{t("service-p-6")}</p>
               <Link
-                to="/products/skyz-service/customer-service-performance-mgmt/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/ניהול-ביצועי-שירות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -104,7 +104,7 @@ const Service = () => {
               <h2>{t("service-t-7")}</h2>
               <p>{t("service-p-7")}</p>
               <Link
-                to="/products/skyz-service/customer-service-information-mgmt/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/שיתוף-מידע-וקבצים-שירות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -114,7 +114,7 @@ const Service = () => {
               <h2>{t("service-t-8")}</h2>
               <p>{t("service-p-8")}</p>
               <Link
-                to="/products/skyz-service/share-calendars/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/שיתוף-יומנים-שירות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -135,7 +135,7 @@ const Service = () => {
               <h2>{t("service-t-9")}</h2>
               <p>{t("service-p-9")}</p>
               <Link
-                to="/products/skyz-service/social-customer-service/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/שיתוף-חברתי-שירות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -145,7 +145,7 @@ const Service = () => {
               <h2>{t("service-t-10")}</h2>
               <p>{t("service-p-10")}</p>
               <Link
-                to="/products/skyz-service/sharing-knowledge/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/שיתוף-ידע-שירות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -179,7 +179,7 @@ const Service = () => {
                 {t("service-p-11.5")}
               </p>
               <Link
-                to="/products/skyz-service/skyz-service-cloud/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/טכנולוגיית-ענן/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -189,7 +189,7 @@ const Service = () => {
               <h2>{t("service-t-12")}</h2>
               <p>{t("service-p-12")}</p>
               <Link
-                to="/products/skyz-service/skyz-service-mobile/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/מובייל-שירות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -210,7 +210,7 @@ const Service = () => {
               <h2>{t("service-t-13")}</h2>
               <p>{t("service-p-13")}</p>
               <Link
-                to="/products/skyz-service/customer-service-workflow/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/שרשור-workflow-שירות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -220,7 +220,7 @@ const Service = () => {
               <h2>{t("service-t-14")}</h2>
               <p>{t("service-p-14")}</p>
               <Link
-                to="/products/skyz-service/email-integration/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/אינטגרציה-לדואר-אלקטרוני-שירות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -242,7 +242,7 @@ const Service = () => {
               <h2>{t("service-t-15")}</h2>
               <p>{t("service-p-15")}</p>
               <Link
-                to="/products/skyz-service/customer-service-control/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/בקרת-שירות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -252,7 +252,7 @@ const Service = () => {
               <h2>{t("service-t-16")}</h2>
               <p>{t("service-p-16")}</p>
               <Link
-                to="/products/skyz-service/reports-and-dashboards/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/דוחות-ודשבורד-שירות/"
                 className="link"
               >
                 {t("learn-more")}...

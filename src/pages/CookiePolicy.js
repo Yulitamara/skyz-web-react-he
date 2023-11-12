@@ -2,7 +2,7 @@ import React from "react";
 
 const CookiePolicy = () => {
   return (
-    <section className="privacy">
+    <section className="privacy" dir="ltr">
       <h3 className="privacy__title">Cookie Policy</h3>
       <p>
         We use cookies to help improve your experience of http://skyz.co.il.

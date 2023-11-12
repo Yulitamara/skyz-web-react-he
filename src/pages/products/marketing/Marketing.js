@@ -21,7 +21,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-1")}</h2>
               <p>{t("marketing-p-1")}</p>
               <Link
-                to="/products/skyz-marketing/email-campaign-management/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניהול-קמפיין-אימיילים/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -31,7 +31,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-2")}</h2>
               <p>{t("marketing-p-2")}</p>
               <Link
-                to="/products/skyz-marketing/mobile-campaign-management/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניהול-קמפיין-מובייל/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -52,7 +52,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-3")}</h2>
               <p>{t("marketing-p-3")}</p>
               <Link
-                to="/products/skyz-marketing/social-campaign-management/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניהול-קמפיין-חברתי/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -62,7 +62,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-4")}</h2>
               <p>{t("marketing-p-4")}</p>
               <Link
-                to="/products/skyz-marketing/database-management/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניהול-מאגרי-מידע/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -84,7 +84,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-5")}</h2>
               <p>{t("marketing-p-5")}</p>
               <Link
-                to="/products/skyz-marketing/customer-clubs/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניהול-מועדוני-לקוחות/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -94,7 +94,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-6")}</h2>
               <p>{t("marketing-p-6")}</p>
               <Link
-                to="/products/skyz-marketing/generate-customer-details/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/אפיון-לקוחות-קיימים/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -104,7 +104,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-7")}</h2>
               <p>{t("marketing-p-7")}</p>
               <Link
-                to="/products/skyz-marketing/customizable-information-analysis/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניתוח-מידע-להתאמה-אישית/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -126,7 +126,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-8")}</h2>
               <p>{t("marketing-p-8")}</p>
               <Link
-                to="/products/skyz-marketing/information-sharing/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/שיתוף-מידע-שיווק/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -136,7 +136,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-9")}</h2>
               <p>{t("marketing-p-9")}</p>
               <Link
-                to="/products/skyz-marketing/social-sharing/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/שיתוף-חברתי-שיווק/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -158,7 +158,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-10")}</h2>
               <p>{t("marketing-p-10")}</p>
               <Link
-                to="/products/skyz-marketing/campaign-optimization/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/אופטימיזציית-קמפיינים-פרסומיים/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -168,7 +168,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-11")}</h2>
               <p>{t("marketing-p-11")}</p>
               <Link
-                to="/products/skyz-marketing/marketing-control/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/בקרת-שיווק-כוללת/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -178,7 +178,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-12")}</h2>
               <p>{t("marketing-p-12")}</p>
               <Link
-                to="/products/skyz-marketing/maximizing-new-customers/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/מקסום-לקוחות-חדשים/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -200,7 +200,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-13")}</h2>
               <p>{t("marketing-p-13")}</p>
               <Link
-                to="/products/skyz-marketing/field-based-marketing-management/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניהול-שיווק-מהשטח/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -210,7 +210,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-14")}</h2>
               <p>{t("marketing-p-14")}</p>
               <Link
-                to="/products/skyz-marketing/marketing-automation/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/אוטומציה-של-תהליכים-בשיווק/"
                 className="link"
               >
                 {t("learn-more")}...
@@ -220,7 +220,7 @@ const Marketing = () => {
               <h2>{t("marketing-t-15")}</h2>
               <p>{t("marketing-p-15")}</p>
               <Link
-                to="/products/skyz-marketing/reports-and-dashboards/"
+                to="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/דוחות-ודשבורד-שיווק/"
                 className="link"
               >
                 {t("learn-more")}...

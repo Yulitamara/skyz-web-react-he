@@ -16,7 +16,10 @@ const Hero = () => {
         <span className="dot"></span>
       </p>
       <div className="btns-container">
-        <Link to="/contact" className="btn-secondary">
+        <Link
+          to="/skyzcrm-ניהול-קשרי-לקוחות/צור-קשר/"
+          className="btn-secondary"
+        >
           {t("start-btn")}
         </Link>
         <Link

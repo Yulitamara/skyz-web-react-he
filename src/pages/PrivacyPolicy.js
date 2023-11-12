@@ -1,7 +1,6 @@
-
 const PrivacyPolicy = () => {
   return (
-    <section className="privacy">
+    <section className="privacy" dir="ltr">
       <h3 className="privacy__title">Privacy Policy</h3>
       <p>
         Your privacy is important to us. It is Impact systems' policy to respect

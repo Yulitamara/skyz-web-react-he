@@ -10,7 +10,7 @@ const MarketingGetStarted = () => {
         <p>{t("marketing-get-started-p")}</p>
       </div>
       <div className="right">
-        <Link to="/contact">
+        <Link to="/skyzcrm-ניהול-קשרי-לקוחות/צור-קשר/">
           <button className="btn red-text">{t("start-btn")}</button>
         </Link>
       </div>

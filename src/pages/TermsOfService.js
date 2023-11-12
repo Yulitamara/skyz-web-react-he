@@ -2,7 +2,7 @@ import React from "react";
 
 const TermsOfService = () => {
   return (
-    <section className="privacy">
+    <section className="privacy" dir="ltr">
       <h3 className="privacy__title">Impact systems Terms of Service</h3>
       <h3 className="privacy__small-title">1. Terms</h3>
       <p>

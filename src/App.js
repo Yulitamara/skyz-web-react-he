@@ -95,14 +95,28 @@ function App() {
         <div className="language-container" style={containerStyles}>
           <Routes>
             <Route path="/" element={<Home darkMode={darkMode} />} />
-            <Route path="/about" element={<AboutUs />} />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/אודות-skyzcrm/"
+              element={<AboutUs />}
+            />
             {/* <Route path="/blogs" element={<Blogs />} /> */}
             {/* <Route path="/login" element={<Login />} /> */}
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/cookie-policy" element={<CookiePolicy />} />
-
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/צור-קשר/"
+              element={<Contact />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/אודות-skyzcrm/privacy-policy/"
+              element={<PrivacyPolicy />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/אודות-skyzcrm/terms-of-service/"
+              element={<TermsOfService />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/אודות-skyzcrm/cookie-policy/"
+              element={<CookiePolicy />}
+            />
             {/* Sales */}
             <Route
               path="/skyzcrm-ניהול-קשרי-לקוחות/skyzsales/"
@@ -175,64 +189,64 @@ function App() {
               element={<Marketing />}
             />
             <Route
-              path="/products/skyz-marketing/campaign-optimization/"
-              element={<CampaignOptimization />}
-            />
-            <Route
-              path="/products/skyz-marketing/customer-clubs/"
-              element={<CustomerClubs />}
-            />
-            <Route
-              path="/products/skyz-marketing/customizable-information-analysis/"
-              element={<CustomizableInformationAnalysis />}
-            />
-            <Route
-              path="/products/skyz-marketing/database-management/"
-              element={<DatabaseManagement />}
-            />
-            <Route
-              path="/products/skyz-marketing/email-campaign-management/"
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניהול-קמפיין-אימיילים/"
               element={<EmailCampaignManagement />}
             />
             <Route
-              path="/products/skyz-marketing/field-based-marketing-management/"
-              element={<FieldBasedMarketingManagement />}
-            />
-            <Route
-              path="/products/skyz-marketing/generate-customer-details/"
-              element={<GenerateCustomerDetails />}
-            />
-            <Route
-              path="/products/skyz-marketing/information-sharing/"
-              element={<InformationSharingMarketing />}
-            />
-            <Route
-              path="/products/skyz-marketing/marketing-automation/"
-              element={<MarketingAutomation />}
-            />
-            <Route
-              path="/products/skyz-marketing/marketing-control/"
-              element={<MarketingControl />}
-            />
-            <Route
-              path="/products/skyz-marketing/maximizing-new-customers/"
-              element={<MaximizingNewCustomers />}
-            />
-            <Route
-              path="/products/skyz-marketing/mobile-campaign-management/"
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניהול-קמפיין-מובייל/"
               element={<MobileCampaignManagement />}
             />
             <Route
-              path="/products/skyz-marketing/reports-and-dashboards/"
-              element={<ReportsAndDashboardsMarketing />}
-            />
-            <Route
-              path="/products/skyz-marketing/social-campaign-management/"
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניהול-קמפיין-חברתי/"
               element={<SocialCampaignManagement />}
             />
             <Route
-              path="/products/skyz-marketing/social-sharing/"
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניהול-מאגרי-מידע/"
+              element={<DatabaseManagement />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניהול-מועדוני-לקוחות/"
+              element={<CustomerClubs />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/אפיון-לקוחות-קיימים/"
+              element={<GenerateCustomerDetails />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניתוח-מידע-להתאמה-אישית/"
+              element={<CustomizableInformationAnalysis />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/שיתוף-מידע-שיווק/"
+              element={<InformationSharingMarketing />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/שיתוף-חברתי-שיווק/"
               element={<SocialSharingMarketing />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/אופטימיזציית-קמפיינים-פרסומיים/"
+              element={<CampaignOptimization />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/בקרת-שיווק-כוללת/"
+              element={<MarketingControl />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/מקסום-לקוחות-חדשים/"
+              element={<MaximizingNewCustomers />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/ניהול-שיווק-מהשטח/"
+              element={<FieldBasedMarketingManagement />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/אוטומציה-של-תהליכים-בשיווק/"
+              element={<MarketingAutomation />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzmarketing/דוחות-ודשבורד-שיווק/"
+              element={<ReportsAndDashboardsMarketing />}
             />
 
             {/* Service */}
@@ -241,68 +255,72 @@ function App() {
               element={<Service />}
             />
             <Route
-              path="/products/skyz-service/customer-service-calls-mgmt/"
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/ניהול-קריאות-שירות/"
               element={<CustomerServiceCallsMgmt />}
             />
             <Route
-              path="/products/skyz-service/customer-service-control/"
-              element={<CustomerServiceControl />}
-            />
-            <Route
-              path="/products/skyz-service/customer-service-events-mgmt/"
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/ניהול-אירועי-שירות/"
               element={<CustomerServiceEventsMgmt />}
             />
             <Route
-              path="/products/skyz-service/customer-service-information-mgmt/"
-              element={<CustomerServiceInformationMgmt />}
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/ניהול-משימות-שירות/"
+              element={<TasksManagement />}
             />
             <Route
-              path="/products/skyz-service/customer-service-performance-mgmt/"
-              element={<CustomerServicePerformanceMgmt />}
-            />
-            <Route
-              path="/products/skyz-service/customer-service-workflow/"
-              element={<CustomerServiceWorkflow />}
-            />
-            <Route
-              path="/products/skyz-service/email-integration/"
-              element={<EmailIntegrationService />}
-            />
-            <Route
-              path="/products/skyz-service/field-based-service-mgmt/"
-              element={<FieldBasedServiceMgmt />}
-            />
-            <Route
-              path="/products/skyz-service/reports-and-dashboards/"
-              element={<ReportsAndDashboardsService />}
-            />
-            <Route
-              path="/products/skyz-service/share-calendars/"
-              element={<ShareCalendars />}
-            />
-            <Route
-              path="/products/skyz-service/sharing-knowledge/"
-              element={<SharingKnowledge />}
-            />
-            <Route
-              path="/products/skyz-service/skyz-service-cloud/"
-              element={<SkyzServiceCloud />}
-            />
-            <Route
-              path="/products/skyz-service/skyz-service-mobile/"
-              element={<SkyzServiceMobile />}
-            />
-            <Route
-              path="/products/skyz-service/service-level-agreement-sla/"
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/ניהול-חוזי-שירות-sla/"
               element={<SLA />}
             />
             <Route
-              path="/products/skyz-service/social-customer-service/"
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/ניהול-שירות-שטח/"
+              element={<FieldBasedServiceMgmt />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/ניהול-ביצועי-שירות/"
+              element={<CustomerServicePerformanceMgmt />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/שיתוף-מידע-וקבצים-שירות/"
+              element={<CustomerServiceInformationMgmt />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/שיתוף-יומנים-שירות/"
+              element={<ShareCalendars />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/שיתוף-יומנים-שירות/"
+              element={<EmailIntegrationService />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/שיתוף-חברתי-שירות/"
               element={<SocialCustomerService />}
             />
             <Route
-              path="/products/skyz-service/tasks-management/"
-              element={<TasksManagement />}
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/שיתוף-ידע-שירות/"
+              element={<SharingKnowledge />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/טכנולוגיית-ענן/"
+              element={<SkyzServiceCloud />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/מובייל-שירות/"
+              element={<SkyzServiceMobile />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/שרשור-workflow-שירות/"
+              element={<CustomerServiceWorkflow />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/אינטגרציה-לדואר-אלקטרוני-שירות/"
+              element={<EmailIntegrationService />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/בקרת-שירות/"
+              element={<CustomerServiceControl />}
+            />
+            <Route
+              path="/skyzcrm-ניהול-קשרי-לקוחות/skyzservice/דוחות-ודשבורד-שירות/"
+              element={<ReportsAndDashboardsService />}
             />
           </Routes>
           <Footer />

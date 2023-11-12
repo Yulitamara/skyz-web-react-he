@@ -49,7 +49,11 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
         <Link to="/" className="link" onClick={handleMenuItemClick}>
           {t("nav-home")}
         </Link>
-        <Link to="/about" className="link" onClick={handleMenuItemClick}>
+        <Link
+          to="/skyzcrm-ניהול-קשרי-לקוחות/אודות-skyzcrm/"
+          className="link"
+          onClick={handleMenuItemClick}
+        >
           {t("nav-about")}
         </Link>
         <Link
@@ -59,7 +63,11 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
         >
           {t("nav-login")}
         </Link>
-        <Link to="/contact" className="link" onClick={handleMenuItemClick}>
+        <Link
+          to="/skyzcrm-ניהול-קשרי-לקוחות/צור-קשר/"
+          className="link"
+          onClick={handleMenuItemClick}
+        >
           {t("nav-contact")}
         </Link>
         <span

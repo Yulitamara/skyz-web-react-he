@@ -10,7 +10,7 @@ const ServiceGetStarted = () => {
         <p>{t("service-get-started-p")}</p>
       </div>
       <div className="right">
-        <Link to="/contact">
+        <Link to="/skyzcrm-ניהול-קשרי-לקוחות/צור-קשר/">
           <button className="btn green-text">{t("start-btn")}</button>
         </Link>
       </div>
