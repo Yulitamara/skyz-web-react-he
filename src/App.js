@@ -5,7 +5,7 @@ import { useState } from "react";
 import ScrollToTop from "./components/ScrollToTop";
 
 import Home from "./pages/Home";
-// import Blogs from "./pages/Blogs";
+import Blogs from "./pages/Blogs";
 import Navbar from "./components/Navbar";
 import AboutUs from "./pages/AboutUs";
 import Footer from "./components/Footer";
@@ -99,7 +99,7 @@ function App() {
               path="/skyzcrm-ניהול-קשרי-לקוחות/אודות-skyzcrm/"
               element={<AboutUs />}
             />
-            {/* <Route path="/blogs" element={<Blogs />} /> */}
+            <Route path="/בלוג/" element={<Blogs />} />
             {/* <Route path="/login" element={<Login />} /> */}
             <Route
               path="/skyzcrm-ניהול-קשרי-לקוחות/צור-קשר/"

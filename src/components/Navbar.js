@@ -49,6 +49,11 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
         <Link to="/" className="link" onClick={handleMenuItemClick}>
           {t("nav-home")}
         </Link>
+        {i18n.resolvedLanguage === "he" && (
+          <Link to="/בלוג/" className="link" onClick={handleMenuItemClick}>
+            בלוג
+          </Link>
+        )}
         <Link
           to="/skyzcrm-ניהול-קשרי-לקוחות/אודות-skyzcrm/"
           className="link"
