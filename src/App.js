@@ -68,6 +68,7 @@ import SocialCustomerService from "./pages/products/service/SocialCustomerServic
 import TasksManagement from "./pages/products/service/TasksManagement";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
+import OpenBlog from "./pages/OpenBlog";
 
 function App() {
   const { i18n } = useTranslation();
@@ -101,6 +102,8 @@ function App() {
             />
             <Route path="/בלוג/" element={<Blogs />} />
             {/* <Route path="/login" element={<Login />} /> */}
+            {/* <Route path="/" exact element={<Blogs />} /> */}
+            <Route path="/blog/:id" element={<OpenBlog />} />
             <Route
               path="/skyzcrm-ניהול-קשרי-לקוחות/צור-קשר/"
               element={<Contact />}

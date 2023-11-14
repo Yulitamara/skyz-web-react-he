@@ -4,7 +4,7 @@ const BlogData = [
     filters: ["all", "CRM", "הצלחת לקוח", "מכירות", "שיווק", "שירות"],
     title:
       "האם כדאי להעדיף את מודל ה- Cloud CRM על פני On-Premise CRM ו-Hybrid CRM?",
-    author: "",
+    author: "אמיר דבוש",
     content: "",
     short:
       "לפני שנתחיל בהשוואה בין 3 מודלי העבודה של מערכות לניהול קשרי לקוחות, נסביר בקצרה על כל אחד מהם: Cloud crm...",

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "../assets/scss/_blogs.scss";
 import "../assets/scss/base.scss";
@@ -57,11 +58,22 @@ const Blogs = () => {
       </p>
       <Filters onSelectFilter={handleSelectFilter} />
       <div className="blogs-container">
-        <Blog blogs={currentBlogs} />
+        {currentBlogs.map((blog) => (
+          <div className="blog" key={blog.id}>
+            <Link to={`/blog/${blog.id}`}>
+              {/* Use Link to navigate to the individual blog page */}
+              <h3 className="blog-title">{blog.title}</h3>
+            </Link>
+            <div className="img-container">
+              <img src={blog.img} alt={blog.title} />
+            </div>
+            <p>{blog.short}</p>
+          </div>
+        ))}
       </div>
       <div className="pagination">
         <button
-          className="forward-btn"
+          className={`forward-btn ${currentPage === 1 ? "disabled" : ""}`}
           onClick={handlePrevPage}
           disabled={currentPage === 1}
         >
@@ -69,7 +81,7 @@ const Blogs = () => {
         </button>
         <span className="page-number">{`${currentPage} / ${totalPages}`}</span>
         <button
-          className="back-btn"
+          className={`back-btn ${currentPage === totalPages ? "disabled" : ""}`}
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
         >
