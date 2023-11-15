@@ -23,7 +23,32 @@
   h2 {
     font-size: 18px;
   }
-  ul {
+  ul,
+  ol {
+    margin: 1rem 0;
     margin-right: 4rem;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .open-blog {
+    img {
+      width: 400px;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .open-blog {
+    img {
+      width: 300px;
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .open-blog {
+    img {
+      width: 250px;
+    }
+  }
+}
+

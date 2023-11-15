@@ -14,7 +14,11 @@ const Filters = ({ onSelectFilter }) => {
   return (
     <div className="filters">
       <button
-        className={selectedFilters.includes("all") ? "filter-clicked" : ""}
+        className={
+          selectedFilters.length === 0 || selectedFilters.includes("all")
+            ? "filter-clicked"
+            : ""
+        }
         onClick={() => handleFilterClick("all")}
       >
         כל המאמרים
