@@ -101,9 +101,7 @@ function App() {
               element={<AboutUs />}
             />
             <Route path="/בלוג/" element={<Blogs />} />
-            {/* <Route path="/login" element={<Login />} /> */}
-            {/* <Route path="/" exact element={<Blogs />} /> */}
-            <Route path="/blog/:id" element={<OpenBlog />} />
+            <Route path="/:url/" element={<OpenBlog />} />
             <Route
               path="/skyzcrm-ניהול-קשרי-לקוחות/צור-קשר/"
               element={<Contact />}

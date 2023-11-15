@@ -60,7 +60,7 @@ const Blogs = () => {
       <div className="blogs-container">
         {currentBlogs.map((blog) => (
           <div className="blog" key={blog.id}>
-            <Link to={`/blog/${blog.id}`}>
+            <Link to={`/${blog.url}/`}>
               {/* Use Link to navigate to the individual blog page */}
               <h3 className="blog-title">{blog.title}</h3>
             </Link>
@@ -93,3 +93,5 @@ const Blogs = () => {
 };
 
 export default Blogs;
+
+
