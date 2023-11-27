@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import Products from "../components/Products";
 import Advantages from "../components/Advantages";
+
 // import Demo from "../components/Demo";
 
 const Home = ({ darkMode }) => {

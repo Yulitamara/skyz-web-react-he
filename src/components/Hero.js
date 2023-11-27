@@ -3,6 +3,7 @@ import "../assets/scss/_hero.scss";
 import "../assets/scss/base.scss";
 // import heroImg from "../assets/imgs/hero-img.svg";
 import { useTranslation } from "react-i18next";
+// import heroImg from "../assets/imgs/hero-img.jpg";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -15,6 +16,8 @@ const Hero = () => {
         {t("manage")}
         <span className="dot"></span>
       </p>
+      {/* <img src={heroImg} alt="hero-img" className="hero-img" /> */}
+
       <div className="btns-container">
         <Link
           to="/skyzcrm-ניהול-קשרי-לקוחות/צור-קשר/"
@@ -29,7 +32,6 @@ const Hero = () => {
           {t("login-btn")}
         </Link>
       </div>
-      {/* <img src={heroImg} alt="hero-img" className="hero-img" /> */}
     </section>
   );
 };

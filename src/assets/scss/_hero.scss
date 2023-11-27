@@ -10,10 +10,33 @@
   background-color: var(--background);
   min-height: 90vh;
   color: var(--text-color);
+  // background-image: url("../assets/imgs/hero-img.jpg");
+  background-image: url("/assets/imgs/hero-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.317);
+    // z-index: ;
+  }
+  // .hero-img {
+  //   padding: 3rem;
+  //   padding-bottom: 5rem;
+  //   display: flex;
+  //   width: 900px;
+  // }
 
   h1 {
     font-size: 7rem;
     font-weight: 600;
+    z-index: 1;
   }
 
   h1.span {
@@ -24,7 +47,8 @@
   p {
     font-size: 28px;
     font-weight: 200;
-    margin-bottom: 10rem;
+    // margin-bottom: 10rem;
+    z-index: 1;
   }
 
   p .dot {

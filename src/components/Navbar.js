@@ -1,6 +1,6 @@
 import "../assets/scss/_navigation.scss";
 import logo from "../assets/imgs/Skyz-logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 
 import i18next from "i18next";
@@ -39,6 +39,10 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
   };
 
   const { t, i18n } = useTranslation();
+
+  const location = useLocation();
+  const currentPath = location.pathname;
+  // console.log("Current Path:", currentPath);
 
   return (
     <header className="navbar" ref={navbarRef}>
@@ -82,19 +86,20 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
           {darkMode ? "light_mode" : "dark_mode"}
         </span>
         <div className="lang">
-          {Object.keys(lngs).map((lng) => (
-            <button
-              className={`lang-btn ${
-                i18n.resolvedLanguage === lng ? "disabled" : ""
-              }`}
-              type="submit"
-              key={lng}
-              onClick={() => i18next.changeLanguage(lng)}
-              disabled={i18n.resolvedLanguage === lng}
-            >
-              {lngs[lng].nativeName}
-            </button>
-          ))}
+          {currentPath !== "/%D7%91%D7%9C%D7%95%D7%92/" &&
+            Object.keys(lngs).map((lng) => (
+              <button
+                className={`lang-btn ${
+                  i18n.resolvedLanguage === lng ? "disabled" : ""
+                }`}
+                type="submit"
+                key={lng}
+                onClick={() => i18next.changeLanguage(lng)}
+                disabled={i18n.resolvedLanguage === lng}
+              >
+                {lngs[lng].nativeName}
+              </button>
+            ))}
         </div>
       </div>
       <span
