@@ -4,7 +4,7 @@ import About from "../components/About";
 import Products from "../components/Products";
 import Advantages from "../components/Advantages";
 
-// import Demo from "../components/Demo";
+import Demo from "../components/Demo";
 
 const Home = ({ darkMode }) => {
   return (
@@ -18,7 +18,7 @@ const Home = ({ darkMode }) => {
         <link rel="canonical" href="/"></link>
       </Helmet>
       <Hero />
-      {/* <Demo /> */}
+      <Demo />
       <About />
       <Products darkMode={darkMode} />
       <Advantages />

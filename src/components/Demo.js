@@ -1,412 +1,270 @@
+import React, { useRef } from "react";
 import "../assets/scss/_skyz-demo.scss";
-import personImge from "../assets/imgs/person.jpg";
-import { useState } from "react";
-import Table from "./Table";
+import Kanban from "./Kanban";
 
 const Demo = () => {
-  // Create an array of booleans to manage the open state of each box
-  const [boxOpenStates, setBoxOpenStates] = useState({
-    connections: false,
-    communication: false,
-    // Add more keys for other boxes here
-  });
-
-  const [openBox, setOpenBox] = useState(null); // Track the currently open box
-
-  const openBoxHandler = (boxKey) => {
-    setOpenBox(boxKey);
+  const kanbanData1 = {
+    columns: {
+      columnId: {
+        title: "פתוח",
+        subtitle: "פוטנציאלי",
+        taskIds: ["task1", "task2", "task3"],
+      },
+      columnId2: {
+        title: "ביצוע",
+        subtitle: "הצעה",
+        taskIds: ["task4", "task5", "task6"],
+      },
+      columnId3: {
+        title: "סגור",
+        subtitle: "הזמנה",
+        taskIds: ["task7", "task8", "task9"],
+      },
+    },
+    tasks: {
+      task1: {
+        title: "הזדמנות",
+        description: "עדכון שדה מקור מששני בכרטסת לקוחות",
+        p: "בזמן תהליך הכנסת הלידים. השדה יהיה מעודכן בהתאם לליד האחרון שהתקבל עבור אותו לקוח",
+        date: "12/12/23",
+        sum: "$210,00",
+        people: "משה, דוד, שלמה",
+      },
+      task2: {
+        title: "הזדמנות",
+        description: "שדרוג גולדפלוס",
+        p: "שדרוג האפליקציה ומסד הנתונים לגרסה מתקדמת מ-2008. ידרוש גישה מרחוק.",
+        date: "1/1/24",
+        sum: "$210,00",
+        people: `מיטב השקעות בע"מ, סילבינה בצלאל`,
+      },
+      task4: {
+        title: "הזדמנות",
+        description: "גולדפלוס/סקייז",
+        p: "",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `אורלי בסביבה ציפורי בע"מ, אורלי סרוסי זהר`,
+      },
+      task5: {
+        title: "הזדמנות",
+        description: `התאמות סקייז לעמותה חדשה "קרן ידע"`,
+        p: "התאמות על בסיס סקייז שפותח לעמותה לקידום מקצועי של עובדי המדינה. הצעה סופית רק לאחר אפיון.",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: "העמותה לקידום מקצועי של עובדי המדינה, עידית כהן",
+      },
+      task7: {
+        title: "הזדמנות",
+        description: "פיצול מסד נתונים ל-2 מסדים",
+        p: "",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `המכללה האקדמית כנרת בעמק הירדן, ענבל עבו`,
+      },
+      task8: {
+        title: "הזדמנות",
+        description: "העברת שרתים",
+        p: "העברת שתי מערכות גולדפלוס עמיתים וגולדפלוס סוכנים. התאמת הגדרות לכור תדיראן שרת VM. נדרש יצירת קישור והוספה לsecurity group בAD + מיפוי כונן לתיקייה של הגולדפלוס לשתי המערכות. הגדרת מערכת לעבודה בSSO. חיבור כל מסדי הנתונים. נושא הSSIS לא נכלל בהעברה. וגם שרתי הפצה. המערכת מיועדת לקריאה בלבד.",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `הילה קולנגי, הפניקס חברה לביטוח בע"מ`,
+      },
+      task9: {
+        title: "הזדמנות",
+        description: "חוזה שירות גולדפלוס",
+        p: "",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `תאגיד הבריאות -רמב"ם`,
+      },
+    },
   };
 
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const kanbanData2 = {
+    columns: {
+      columnId: {
+        title: "בתהליך",
+        subtitle: "זכיה",
+        taskIds: ["task1", "task2", "task3"],
+      },
+      columnId2: {
+        title: "ביצוע",
+        subtitle: "בעבודה",
+        taskIds: ["task4", "task5", "task6"],
+      },
+      columnId3: {
+        title: "סגור",
+        subtitle: "בהמתנה",
+        taskIds: ["task7", "task8", "task9"],
+      },
+    },
+    tasks: {
+      task1: {
+        title: "הזדמנות",
+        description: `עדכון שדה מקור משני ב"כרטסת לקוחות"`,
+        p: "בזמן תהליך הכנסת הלידים. השדה יהיה מעודכן בהתאם לליד האחרון שהתקבל עבור אותו לקוח.",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: "משה, דוד, שלמה",
+      },
+      task2: {
+        title: "הזדמנות",
+        description: "שדרוג גולדפלוס",
+        p: "שדרוג האפליקציה ומסד הנתונים לגרסה מתקדמת מ-2008. ידרוש גישה מרחוק.",
+        date: "1/1/24",
+        sum: "$210,00",
+        people: `מיטב השקעות בע"מ, סילבינה בצלאל`,
+      },
+      task4: {
+        title: "הזדמנות",
+        description: "גולדפלוס/סקייז",
+        p: "",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `אורלי בסביבה ציפורי בע"מ, אורלי סרוסי זהר`,
+      },
+      task5: {
+        title: "הזדמנות",
+        description: `התאמות סקייז לעמותה חדשה "קרן ידע"`,
+        p: "התאמות על בסיס סקייז שפותח לעמותה לקידום מקצועי של עובדי המדינה. הצעה סופית רק לאחר אפיון.",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: "העמותה לקידום מקצועי של עובדי המדינה, עידית כהן",
+      },
+      task7: {
+        title: "הזדמנות",
+        description: "פיצול מסד נתונים ל-2 מסדים",
+        p: "",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `המכללה האקדמית כנרת בעמק הירדן, ענבל עבו`,
+      },
+      task8: {
+        title: "הזדמנות",
+        description: "העברת שרתים",
+        p: "העברת שתי מערכות גולדפלוס עמיתים וגולדפלוס סוכנים. התאמת הגדרות לכור תדיראן שרת VM. נדרש יצירת קישור והוספה לsecurity group בAD + מיפוי כונן לתיקייה של הגולדפלוס לשתי המערכות. הגדרת מערכת לעבודה בSSO. חיבור כל מסדי הנתונים. נושא הSSIS לא נכלל בהעברה. וגם שרתי הפצה. המערכת מיועדת לקריאה בלבד.",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `הילה קולנגי, הפניקס חברה לביטוח בע"מ`,
+      },
+      task9: {
+        title: "הזדמנות",
+        description: "חוזה שירות גולדפלוס",
+        p: "",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `תאגיד הבריאות -רמב"ם`,
+      },
+    },
+  };
 
-  const handleToggleSidebarDemo = () => {
-    setSidebarOpen(!sidebarOpen);
+  const kanbanData3 = {
+    columns: {
+      columnId: {
+        title: "סגור",
+        subtitle: "בוצע",
+        taskIds: ["task1", "task2", "task3"],
+      },
+      columnId2: {
+        title: "ביצוע",
+        subtitle: "זכיה - הסתים",
+        taskIds: ["task4", "task5", "task6"],
+      },
+      columnId3: {
+        title: "סגור",
+        subtitle: "הקפאה",
+        taskIds: ["task7", "task8", "task9"],
+      },
+      columnId4: {
+        title: "סגור",
+        subtitle: "הפסד",
+        taskIds: ["task10", "task11", "task12"],
+      },
+      columnId5: {
+        title: "סגור",
+        subtitle: "מבוטל",
+        taskIds: ["task13", "task14", "task15"],
+      },
+    },
+    tasks: {
+      task1: {
+        title: "הזדמנות",
+        description: `עדכון שדה מקור משני ב"כרטסת לקוחות"`,
+        p: "בזמן תהליך הכנסת הלידים. השדה יהיה מעודכן בהתאם לליד האחרון שהתקבל עבור אותו לקוח.",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: "משה, דוד, שלמה",
+      },
+      task2: {
+        title: "הזדמנות",
+        description: "שדרוג גולדפלוס",
+        p: "שדרוג האפליקציה ומסד הנתונים לגרסה מתקדמת מ-2008. ידרוש גישה מרחוק.",
+        date: "1/1/24",
+        sum: "$210,00",
+        people: `מיטב השקעות בע"מ, סילבינה בצלאל`,
+      },
+      task4: {
+        title: "הזדמנות",
+        description: "גולדפלוס/סקייז",
+        p: "",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `אורלי בסביבה ציפורי בע"מ, אורלי סרוסי זהר`,
+      },
+      task5: {
+        title: "הזדמנות",
+        description: `התאמות סקייז לעמותה חדשה "קרן ידע"`,
+        p: "התאמות על בסיס סקייז שפותח לעמותה לקידום מקצועי של עובדי המדינה. הצעה סופית רק לאחר אפיון.",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: "העמותה לקידום מקצועי של עובדי המדינה, עידית כהן",
+      },
+      task7: {
+        title: "הזדמנות",
+        description: "פיצול מסד נתונים ל-2 מסדים",
+        p: "",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `המכללה האקדמית כנרת בעמק הירדן, ענבל עבו`,
+      },
+      task8: {
+        title: "הזדמנות",
+        description: "העברת שרתים",
+        p: "העברת שתי מערכות גולדפלוס עמיתים וגולדפלוס סוכנים. התאמת הגדרות לכור תדיראן שרת VM. נדרש יצירת קישור והוספה לsecurity group בAD + מיפוי כונן לתיקייה של הגולדפלוס לשתי המערכות. הגדרת מערכת לעבודה בSSO. חיבור כל מסדי הנתונים. נושא הSSIS לא נכלל בהעברה. וגם שרתי הפצה. המערכת מיועדת לקריאה בלבד.",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `הילה קולנגי, הפניקס חברה לביטוח בע"מ`,
+      },
+      task9: {
+        title: "הזדמנות",
+        description: "חוזה שירות גולדפלוס",
+        p: "",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `תאגיד הבריאות -רמב"ם`,
+      },
+      task13: {
+        title: "הזדמנות",
+        description: "חוזה שירות גולדפלוס",
+        p: "",
+        date: "12/12/24",
+        sum: "$210,00",
+        people: `תאגיד הבריאות -רמב"ם`,
+      },
+    },
   };
 
   return (
     <div className="skyz-demo">
-      <h1>
-        Live Demo! Try it out
-        <span className="material-symbols-outlined">arrow_downward</span>
-        {/* <br /> */}
-        <span className="material-symbols-outlined phone-icon">
-          phone_iphone
-        </span>
-      </h1>
       <div className="demo-container">
-        <div className="skyz-demo__navbar">
-          <div className="navbar__menu">
-            <span
-              className="material-symbols-outlined demo-side-toggle-"
-              onClick={handleToggleSidebarDemo}
-            >
-              menu
-            </span>
-            <div className="navbar__menu--logo">
-              <span className="material-symbols-outlined">home</span>
-              <div>
-                Skyz<span>CRM</span>
-              </div>
-            </div>
-          </div>
-          <div className="navbar__search">
-            <div className="navbar__search--input-container">
-              <input
-                type="text"
-                className="input"
-                placeholder="Search..."
-                id="searchInput"
-              />
-            </div>
-            <div className="navbar__search--links-container">
-              <div className="round-btn round-btn-primary">
-                <span className="material-symbols-outlined"> search </span>
-              </div>
-              <div className="round-btn round-btn-secondary">
-                <span className="material-symbols-outlined">add</span>
-              </div>
-            </div>
-          </div>
-          <div className="navbar__personal">
-            <span
-              className="material-symbols-outlined fill-icon"
-              id="change-color"
-            >
-              circle
-            </span>
-            <div className="darkmode-toggle">
-              <button aria-label="darkmode-toggle" id="darkmodeToggle">
-                <span className="material-symbols-outlined">dark_mode</span>
-              </button>
-            </div>
-            <div className="navbar__personal--name">Impact System</div>
-            {/* <div className="round-img-container"> */}
-            {/* <img src="./up/imgs/passport.webp" alt=""> */}
-            {/* </div> */}
-          </div>
-          <div className="navbar__hamburger-menu">
-            <span className="material-symbols-outlined hamburger-menu">
-              menu
-            </span>
-          </div>
-        </div>
-        <div className="navbar__overlay"></div>
-
-        <div className="new-container">
-          <div className={`skyz-demo__sidebar ${sidebarOpen ? "open" : ""}`}>
-            <div className="sidebar__content">
-              <ul className="sidebar__content--list">
-                <li className="create-item">
-                  <a href="#">
-                    <span className="material-symbols-outlined">add</span>
-                    <div>Create</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="material-symbols-outlined">home</span>
-                    <div>SkyzCRM</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="material-symbols-outlined">category</span>
-                    <div>Actions</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="material-symbols-outlined">
-                      account_balance_wallet
-                    </span>
-                    <div>Acounts</div>
-                    <div
-                      className="side-nav__content--list__item--collapse active"
-                      id="acountsCollapse"
-                    >
-                      <span>All</span>
-                      <span>Opened</span>
-                      <span>SLA Exception</span>
-                      <span>In Progress</span>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="material-symbols-outlined">
-                      attach_money
-                    </span>
-                    <div>Debit Order</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="material-symbols-outlined">chat</span>
-                    <div>Chat</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="material-symbols-outlined">handyman</span>
-                    <div>Service</div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="skyz-demo__main">
-            <div className="card-container">
-              <div className="card">
-                <div className="card-header">
-                  <div className="top">
-                    <div className="left">
-                      <div className="title">
-                        <span className="round-img-container">
-                          <img src={personImge} alt="person image" />
-                        </span>
-                        <span>Deandra Reynolds</span>
-                      </div>
-                      <div className="flex-container title-right">
-                        <span className="small-chip red">Manager</span>
-                        <span className="small-chip green">Sales</span>
-                      </div>
-                    </div>
-                    <div className="right">
-                      <span className="material-symbols-outlined">
-                        more_vert
-                      </span>
-                      {/* <span className="material-symbols-outlined">close</span> */}
-                    </div>
-                  </div>
-                </div>
-                {openBox === null && (
-                  <div className="card__boxes">
-                    <div className="card__boxes--box">
-                      <div className="card__boxes--box__header">
-                        <div className="card__boxes--box__header--title">
-                          <span className="material-symbols-outlined">
-                            link
-                          </span>
-                          <span>Connections</span>
-                        </div>
-                        <div className="card__boxes--box__header--btns">
-                          <span
-                            className="material-symbols-outlined"
-                            onClick={() => openBoxHandler("connections")}
-                          >
-                            expand_more
-                          </span>
-                        </div>
-                      </div>
-                      <div className="card__boxes--box__content">
-                        <div className="card__boxes--box__content--fields">
-                          <span>Figma, employee</span>
-                          <span className="material-symbols-outlined stop-icon">
-                            stop
-                          </span>
-                          <span>Lina Dee</span>
-                          <span className="material-symbols-outlined stop-icon">
-                            stop
-                          </span>
-                          <span>Max Reynolds, manager</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="card__boxes--box">
-                      <div className="card__boxes--box__header">
-                        <div className="card__boxes--box__header--title">
-                          <span className="material-symbols-outlined">
-                            phone
-                          </span>
-                          <span>Communication</span>
-                        </div>
-                        <div className="card__boxes--box__header--btns">
-                          <span
-                            className="material-symbols-outlined"
-                            onClick={() => openBoxHandler("communication")}
-                          >
-                            expand_more
-                          </span>
-                        </div>
-                      </div>
-                      <div className="card__boxes--box__content">
-                        <div className="card__boxes--box__content--fields">
-                          <span>Work, +972-38728829</span>
-                          <span className="material-symbols-outlined stop-icon">
-                            stop
-                          </span>
-                          <span>Private, +972-52390378</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="card__boxes--box">
-                      <div className="card__boxes--box__header">
-                        <div className="card__boxes--box__header--title">
-                          <span className="material-symbols-outlined">
-                            home
-                          </span>
-                          <span>Addresses</span>
-                        </div>
-                        <div className="card__boxes--box__header--btns">
-                          <span className="material-symbols-outlined">
-                            expand_more
-                          </span>
-                        </div>
-                      </div>
-                      <div className="card__boxes--box__content">
-                        <div className="card__boxes--box__content--fields">
-                          <span>Halel 90, Jerusalem, 91827</span>
-                          <span className="material-symbols-outlined stop-icon">
-                            stop
-                          </span>
-                          <span>Ben Gurion 24, Remat Gan</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="card__boxes--box">
-                      <div className="card__boxes--box__header">
-                        <div className="card__boxes--box__header--title">
-                          <span className="material-symbols-outlined">
-                            info
-                          </span>
-                          <span>More Info</span>
-                        </div>
-                        <div className="card__boxes--box__header--btns">
-                          <span className="material-symbols-outlined">
-                            expand_more
-                          </span>
-                        </div>
-                      </div>
-                      <div className="card__boxes--box__content">
-                        <div className="card__boxes--box__content--fields">
-                          <span>Doctor</span>
-                          <span className="material-symbols-outlined stop-icon">
-                            stop
-                          </span>
-                          <span>24/08/1989</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                <div className="card__open-boxes">
-                  {openBox === "connections" && (
-                    <div className="card__open-boxes--box">
-                      <div className="card-header">
-                        <div className="top">
-                          <div className="left">
-                            <div className="title medium-title">
-                              <span className="material-symbols-outlined title-icon">
-                                link
-                              </span>
-                              <span>Connections</span>
-                            </div>
-                            <div className="flex-container title-right">
-                              <div className="filter-tag">
-                                <span className="material-symbols-outlined">
-                                  vertical_split
-                                </span>
-                              </div>
-                              <div className="filter-tag">
-                                <span className="material-symbols-outlined">
-                                  assignment
-                                </span>
-                                <div>
-                                  <span className="material-symbols-outlined">
-                                    arrow_drop_down
-                                  </span>
-                                </div>
-                              </div>
-                              <div className="filter-tag">
-                                <span className="material-symbols-outlined">
-                                  search
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="right">
-                            <div className="round-btn round-btn-secondary">
-                              <span className="material-symbols-outlined">
-                                add
-                              </span>
-                            </div>
-                            <span className="material-symbols-outlined">
-                              more_vert
-                            </span>
-                            <span
-                              className="material-symbols-outlined"
-                              onClick={() => openBoxHandler(null)}
-                            >
-                              close
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="card__open-boxes--box__content">
-                        <Table />
-                      </div>
-                    </div>
-                  )}
-                  {openBox === "communication" && (
-                    <div className="card__open-boxes--box">
-                      <div className="card-header">
-                        <div className="top">
-                          <div className="left">
-                            <div className="title medium-title">
-                              <span className="material-symbols-outlined title-icon">
-                                call
-                              </span>
-                              <span>Communication</span>
-                            </div>
-                            <div className="flex-container title-right">
-                              <div className="filter-tag">
-                                <span className="material-symbols-outlined">
-                                  vertical_split
-                                </span>
-                              </div>
-                              <div className="filter-tag">
-                                <span className="material-symbols-outlined">
-                                  assignment
-                                </span>
-                                <div>
-                                  <span className="material-symbols-outlined">
-                                    arrow_drop_down
-                                  </span>
-                                </div>
-                              </div>
-                              <div className="filter-tag">
-                                <span className="material-symbols-outlined">
-                                  search
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="right">
-                            <div className="round-btn round-btn-secondary">
-                              <span className="material-symbols-outlined">
-                                add
-                              </span>
-                            </div>
-                            <span className="material-symbols-outlined">
-                              more_vert
-                            </span>
-                            <span
-                              className="material-symbols-outlined"
-                              onClick={() => openBoxHandler(null)}
-                            >
-                              close
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="card__open-boxes--box__content">
-                        <Table />
-                      </div>
-                    </div>
-                  )}
-                </div>
+        <div className="skyz-demo__main">
+          <div className="card-container">
+            <div className="card">
+              <div className="kanban-container">
+                <Kanban initialData={kanbanData1} mainTitleClass="kanban-1" />
+                <Kanban initialData={kanbanData2} mainTitleClass="kanban-2" />
+                <Kanban initialData={kanbanData3} mainTitleClass="kanban-3" />
               </div>
             </div>
           </div>

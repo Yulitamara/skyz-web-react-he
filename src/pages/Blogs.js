@@ -21,7 +21,7 @@ const Blogs = () => {
         )
       : BlogData;
 
-  const totalBlogs = filteredBlogs.length; // Update to get the total number of filtered blogs
+  const totalBlogs = filteredBlogs.length; 
   const totalPages = Math.ceil(totalBlogs / blogsPerPage);
 
   const handleNextPage = () => {
