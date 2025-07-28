@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import KanbanGroup from "./KanbanGroup";
 import "../assets/scss/_skyz-demo.scss";
+import { useTranslation } from "react-i18next";
 
 const Demo = () => {
+const { t } = useTranslation();
+
   const initialData = {
     tasks: {
       task1: { title: "הזדמנות", description: "עדכון שדה מקור משני בכרטסת לקוחות", p: "בזמן תהליך הכנסת הלידים...", date: "12/12/23", sum: "$210,00", people: "משה, דוד, שלמה" },
@@ -15,22 +18,19 @@ const Demo = () => {
     },
     columns: {
       // קבוצה 1 (פתוח)
-      col1: { id: "col1", title: "פתוח", subtitle: "פוטנציאלי", taskIds: ["task1", "task2"] },
       col2: { id: "col2", title: "ביצוע", subtitle: "הצעה", taskIds: ["task3"] },
-      col3: { id: "col3", title: "סגור", subtitle: "הזמנה", taskIds: [] },
+      col3: { id: "col3", title: "סגור", subtitle: "הזמנה", taskIds: ["task1", "task2"] },
       // קבוצה 2 (בתהליך)
-      col4: { id: "col4", title: "בתהליך", subtitle: "זכיה", taskIds: ["task4"] },
-      col5: { id: "col5", title: "ביצוע", subtitle: "בעבודה", taskIds: [] },
+      col5: { id: "col5", title: "ביצוע", subtitle: "בעבודה", taskIds: ["task4"] },
       col6: { id: "col6", title: "סגור", subtitle: "בהמתנה", taskIds: [] },
       // קבוצה 3 (סגור)
       col7: { id: "col7", title: "סגור", subtitle: "בוצע", taskIds: ["task5"] },
-      col8: { id: "col8", title: "סגור", subtitle: "הפסד", taskIds: ["task6"] },
-      col9: { id: "col9", title: "סגור", subtitle: "מבוטל", taskIds: [] }
+      col9: { id: "col9", title: "סגור", subtitle: "מבוטל", taskIds: ["task6"] }
     },
     groups: {
-      group1: { id: "group1", title: "פתוח", className: "kanban-1", columnOrder: ["col1", "col2", "col3"] },
-      group2: { id: "group2", title: "בתהליך", className: "kanban-2", columnOrder: ["col4", "col5", "col6"] },
-      group3: { id: "group3", title: "סגור", className: "kanban-3", columnOrder: ["col7", "col8", "col9"] }
+      group1: { id: "group1",  titleKey: "kanban-open", className: "kanban-1", columnOrder: ["col2", "col3"] },
+      group2: { id: "group2", titleKey: "kanban-ongoing", className: "kanban-2", columnOrder: ["col5", "col6"] },
+      group3: { id: "group3", titleKey: "kanban-closed", className: "kanban-3", columnOrder: ["col7", "col9"] }
     },
     groupOrder: ["group1", "group2", "group3"]
   };

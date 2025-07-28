@@ -27,7 +27,7 @@
     transition: all .3s ease;
 
   .kanban {
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 1rem;
     width: 400px;
 
@@ -50,13 +50,13 @@
       }
     }
     .main-title.kanban-1 {
-      background-color: rgb(208, 255, 192);
+      background-color: var(--kanban-open-bg)
     }
     .main-title.kanban-2 {
-      background-color: rgb(255, 246, 192);
+      background-color: var(--kanban-inprogress-bg)
     }
     .main-title.kanban-3 {
-      background-color: rgb(192, 212, 255);
+      background-color: var(--kanban-closed-bg)
     }
 
     .title {
@@ -83,7 +83,7 @@
     .kanban-column {
       padding: 1rem;
       display: flex;
-      background-color: #fff;
+      background-color: transparent;
       flex-direction: column;
       width: 100%;
       min-height: 70px;
@@ -91,6 +91,9 @@
       max-width: max-content;
       border-bottom-left-radius: 1rem;
       border-bottom-right-radius: 1rem;
+      h3 {
+        color: var(--text-color);
+      }
 
       .kanban-tasks-list {
         min-height: 100px;
@@ -110,7 +113,7 @@
     }
 
     .kanban-task {
-      background-color: #fff;
+      background-color: #fbfbfb;
       border: 1px solid #ddd;
       border-radius: 4px;
       padding: 8px;

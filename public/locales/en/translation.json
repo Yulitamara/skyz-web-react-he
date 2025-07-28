@@ -562,5 +562,8 @@
   "advantages-mobile-t": "Full mobile compatibility",
   "advantages-mobile-p": "Full mobile compatibility Allow yourself to manage customer relationships from mobile devices just like from the office. Take advantage of field work capabilities and increase productivity.",
   "advantages-roi-t": "High ROI",
-  "advantages-roi-p": "Dramatically improve work processes. Increase revenue and significantly improve the bottom line on a monthly, quarterly, and annual basis."
+  "advantages-roi-p": "Dramatically improve work processes. Increase revenue and significantly improve the bottom line on a monthly, quarterly, and annual basis.",
+  "kanban-open": "Open",
+   "kanban-ongoing": "Ongoing",
+  "kanban-closed": "Closed"
 }
