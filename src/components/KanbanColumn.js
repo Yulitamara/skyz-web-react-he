@@ -1,8 +1,10 @@
 import { Droppable } from "react-beautiful-dnd";
 import "../assets/scss/_kanban.scss";
 import KanbanTask from "./KanbanTask";
+import { useTranslation } from "react-i18next";
 
 const KanbanColumn = ({ columnId, tasks, subtitle }) => {
+  const { t } = useTranslation();
   const column = tasks.columns[columnId];
   if (!column) return null;
 
@@ -14,7 +16,9 @@ const KanbanColumn = ({ columnId, tasks, subtitle }) => {
           {...provided.droppableProps}
           className={`kanban-column ${snapshot.isDraggingOver ? "drag-over" : ""}`}
         >
-          <h3>{subtitle}</h3>
+          <h3>
+            {column.subtitleKey ? t(column.subtitleKey) : subtitle}
+          </h3>
           <div className={`kanban-tasks-list ${snapshot.isDraggingOver ? "highlight-drop" : ""}`}>
             {column.taskIds.map((taskId, index) => (
               <KanbanTask

@@ -1613,7 +1613,6 @@ input:focus {
 .kanban-container .kanban.minimize {
   width: 40px;
   overflow: hidden;
-  max-height: 400px;
 }
 .kanban-container .kanban.minimize .main-title {
   justify-content: space-between;

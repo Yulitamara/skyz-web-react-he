@@ -1,35 +1,41 @@
 import { Draggable } from "react-beautiful-dnd";
 import "../assets/scss/_kanban.scss";
+import { useTranslation } from "react-i18next";
 
 const KanbanTask = ({ taskId, task, index }) => {
+  const { t } = useTranslation();
+
   if (!task) return null;
 
   return (
     <Draggable draggableId={taskId} index={index}>
-      {(provided, snapshot) => (
+      {(provided) => (
         <div
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
-          className={`kanban-task ${snapshot.isDragging ? "dragging" : ""}`}
+          className="kanban-task"
         >
-          {/* כותרת המשימה */}
           <div className="task-title-container">
-            {task.title && <span>{task.title}</span>}
+            <span>{task.titleKey ? t(task.titleKey) : task.title}</span>
             {task.date && <span className="date">{task.date}</span>}
           </div>
 
-          {/* תוכן המשימה */}
           <div className="task-content">
-            {task.description && <h3>{task.description}</h3>}
-            {task.p && <p>{task.p}</p>}
+            {(task.descriptionKey || task.description) && (
+              <h3>{task.descriptionKey ? t(task.descriptionKey) : task.description}</h3>
+            )}
+            {(task.pKey || task.p) && (
+              <p>{task.pKey ? t(task.pKey) : task.p}</p>
+            )}
           </div>
 
-          {/* מידע נוסף */}
-          <div className="task-title-container">
-            {task.sum && <span className="sum">{task.sum}</span>}
-            {task.people && <span>{task.people}</span>}
-          </div>
+      <div className="task-title-container">
+  {task.groupKey && <span className="date">{t(task.groupKey)}</span>}
+  {(task.peopleKey || task.people) && (
+    <span>{task.peopleKey ? t(task.peopleKey) : task.people}</span>
+  )}
+</div>
         </div>
       )}
     </Draggable>

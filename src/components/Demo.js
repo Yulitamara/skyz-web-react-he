@@ -9,26 +9,27 @@ const { t } = useTranslation();
 
   const initialData = {
     tasks: {
-      task1: { title: "הזדמנות", description: "עדכון שדה מקור משני בכרטסת לקוחות", p: "בזמן תהליך הכנסת הלידים...", date: "12/12/23", sum: "$210,00", people: "משה, דוד, שלמה" },
-      task2: { title: "הזדמנות", description: "שדרוג גולדפלוס", p: "שדרוג האפליקציה ומסד הנתונים...", date: "1/1/24", sum: "$210,00", people: "מיטב השקעות בע\"מ" },
-      task3: { title: "הזדמנות", description: "גולדפלוס/סקייז", p: "", date: "12/12/24", sum: "$210,00", people: "אורלי סרוסי" },
-      task4: { title: "הזדמנות", description: "התאמות סקייז לעמותה", p: "התאמות על בסיס סקייז...", date: "12/12/24", sum: "$210,00", people: "עמותת קרן" },
-      task5: { title: "הזדמנות", description: "פיצול מסד נתונים ל-2 מסדים", p: "", date: "12/12/24", sum: "$210,00", people: "המכללה האקדמית כנרת" },
-      task6: { title: "הזדמנות", description: "חוזה שירות גולדפלוס", p: "", date: "12/12/24", sum: "$210,00", people: "תאגיד הבריאות -רמב\"ם" }
+      task1: { titleKey: "kanban-task", descriptionKey: "kanban-advertising-campaign", pKey: "kanban-advertising-campaign-content", date: "12/12/23", groupKey: "kanban-marketing", peopleKey: "kanban-shirley" },
+      task2: { titleKey: "kanban-task", descriptionKey: "kanban-meeting", pKey: "kanban-meeting-content", date: "1/1/24", groupKey: "kanban-sales", peopleKey: "kanban-dor" },
+      task3: { titleKey: "kanban-task", descriptionKey: "kanban-meeting", pKey: "kanban-meeting-content", date: "1/1/24", groupKey: "kanban-sales", peopleKey: "kanban-dor" },
+      task4: { titleKey: "kanban-task", descriptionKey: "kanban-meeting", pKey: "kanban-meeting-content", date: "1/1/24", groupKey: "kanban-sales", peopleKey: "kanban-dor" },
+      task5: { titleKey: "kanban-task", descriptionKey: "kanban-meeting", pKey: "kanban-meeting-content", date: "1/1/24", groupKey: "kanban-sales", peopleKey: "kanban-dor" },
+      task6: { titleKey: "kanban-task", descriptionKey: "kanban-meeting", pKey: "kanban-meeting-content", date: "1/1/24", groupKey: "kanban-sales", peopleKey: "kanban-dor" },
+      task7: { titleKey: "kanban-task", descriptionKey: "kanban-meeting", pKey: "kanban-meeting-content", date: "1/1/24", groupKey: "kanban-sales", peopleKey: "kanban-dor" },
     },
     columns: {
       // קבוצה 1 (פתוח)
-      col2: { id: "col2", title: "ביצוע", subtitle: "הצעה", taskIds: ["task3"] },
-      col3: { id: "col3", title: "סגור", subtitle: "הזמנה", taskIds: ["task1", "task2"] },
+      col2: { id: "col2", title: "ביצוע", subtitleKey: "kanban-offer", taskIds: ["task1"] },
+      col3: { id: "col3", title: "סגור", subtitleKey: "kanban-order", taskIds: ["task2"] },
       // קבוצה 2 (בתהליך)
-      col5: { id: "col5", title: "ביצוע", subtitle: "בעבודה", taskIds: ["task4"] },
-      col6: { id: "col6", title: "סגור", subtitle: "בהמתנה", taskIds: [] },
+      col5: { id: "col5", title: "ביצוע", subtitleKey: "kanban-inprogress", taskIds: ["task3"] },
+      col6: { id: "col6", title: "סגור", subtitleKey: "kanban-pending", taskIds: ["task4"] },
       // קבוצה 3 (סגור)
-      col7: { id: "col7", title: "סגור", subtitle: "בוצע", taskIds: ["task5"] },
-      col9: { id: "col9", title: "סגור", subtitle: "מבוטל", taskIds: ["task6"] }
+      col7: { id: "col7", title: "סגור", subtitleKey: "kanban-completed", taskIds: ["task5"] },
+      col9: { id: "col9", title: "סגור", subtitleKey: "kanban-cancelled", taskIds: ["task6"] }
     },
     groups: {
-      group1: { id: "group1",  titleKey: "kanban-open", className: "kanban-1", columnOrder: ["col2", "col3"] },
+      group1: { id: "group1", titleKey: "kanban-open", className: "kanban-1", columnOrder: ["col2", "col3"] },
       group2: { id: "group2", titleKey: "kanban-ongoing", className: "kanban-2", columnOrder: ["col5", "col6"] },
       group3: { id: "group3", titleKey: "kanban-closed", className: "kanban-3", columnOrder: ["col7", "col9"] }
     },
