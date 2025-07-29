@@ -9,12 +9,12 @@ const { t } = useTranslation();
 
   const initialData = {
     tasks: {
-      task1: { titleKey: "kanban-task", descriptionKey: "kanban-advertising-campaign", pKey: "kanban-advertising-campaign-content", date: "12/12/23", groupKey: "kanban-marketing", peopleKey: "kanban-shirley" },
+      task1: { titleKey: "kanban-task", descriptionKey: "kanban-advertising-campaign", pKey: "kanban-advertising-campaign-content", date: "12/12/25", groupKey: "kanban-marketing", peopleKey: "kanban-shirley" },
       task2: { titleKey: "kanban-task", descriptionKey: "kanban-meeting", pKey: "kanban-meeting-content", date: "1/1/24", groupKey: "kanban-sales", peopleKey: "kanban-dor" },
-      task3: { titleKey: "kanban-task", descriptionKey: "kanban-meeting", pKey: "kanban-meeting-content", date: "1/1/24", groupKey: "kanban-sales", peopleKey: "kanban-dor" },
-      task4: { titleKey: "kanban-task", descriptionKey: "kanban-meeting", pKey: "kanban-meeting-content", date: "1/1/24", groupKey: "kanban-sales", peopleKey: "kanban-dor" },
-      task5: { titleKey: "kanban-task", descriptionKey: "kanban-meeting", pKey: "kanban-meeting-content", date: "1/1/24", groupKey: "kanban-sales", peopleKey: "kanban-dor" },
-      task6: { titleKey: "kanban-task", descriptionKey: "kanban-meeting", pKey: "kanban-meeting-content", date: "1/1/24", groupKey: "kanban-sales", peopleKey: "kanban-dor" },
+      task3: { titleKey: "kanban-software-development", descriptionKey: "kanban-code-handover", pKey: "kanban-code-handover-content", date: "10/01/26", groupKey: "kanban-development", peopleKey: "kanban-moran" },
+      task4: { titleKey: "kanban-customer-service", descriptionKey: "kanban-technical-issues", pKey: "kanban-technical-issues-content", date: "13/11/25", groupKey: "kanban-development", peopleKey: "kanban-avi" },
+      task5: { titleKey: "kanban-accounting", descriptionKey: "kanban-financial-reports", pKey: "kanban-financial-reports-content", date: "15/12/25", groupKey: "kanban-sales", peopleKey: "kanban-anat" },
+      task6: { titleKey: "kanban-operations", descriptionKey: "kanban-inspection", pKey: "kanban-inspection-content", date: "03/04/26", groupKey: "kanban-sales", peopleKey: "kanban-alex" },
       task7: { titleKey: "kanban-task", descriptionKey: "kanban-meeting", pKey: "kanban-meeting-content", date: "1/1/24", groupKey: "kanban-sales", peopleKey: "kanban-dor" },
     },
     columns: {

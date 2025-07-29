@@ -1484,7 +1484,7 @@ input:focus {
   gap: 1rem;
   grid-template-columns: repeat(3, minmax(-webkit-min-content, 40px));
   grid-template-columns: repeat(3, minmax(min-content, 40px));
-  justify-content: start;
+  justify-content: flex-start;
   padding: 1rem;
   overflow-x: auto;
   transition: all 0.3s ease;

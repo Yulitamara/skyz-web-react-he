@@ -562,5 +562,24 @@
   "advantages-mobile-t": "Full mobile compatibility",
   "advantages-mobile-p": "Full mobile compatibility Allow yourself to manage customer relationships from mobile devices just like from the office. Take advantage of field work capabilities and increase productivity.",
   "advantages-roi-t": "High ROI",
-  "advantages-roi-p": "Dramatically improve work processes. Increase revenue and significantly improve the bottom line on a monthly, quarterly, and annual basis."
+  "advantages-roi-p": "Dramatically improve work processes. Increase revenue and significantly improve the bottom line on a monthly, quarterly, and annual basis.",
+  "kanban-open": "Open",
+  "kanban-ongoing": "Ongoing",
+  "kanban-closed": "Closed",
+  "kanban-offer": "Offer",
+  "kanban-task": "Task",
+  "kanban-order": "Order",
+  "kanban-advertising-campaign": "Advertising Campaign",
+  "kanban-advertising-campaign-content": "Prepare a new advertising campaign on social media to promote the company's new product.",
+  "kanban-marketing": "Marketing",
+  "kanban-shirley": "Shirley Cohen",
+  "kanban-meeting": "Meeting",
+  "kanban-meeting-content": "Meet with a potential new client and provide a price quote.",
+  "kanban-dor": "Dor Alon",
+  "kanban-sales": "Sales",
+  "kanban-inprogress": "In Progress",
+  "kanban-pending": "Pending",
+  "kanban-completed": "Completed",
+  "kanban-cancelled": "Cancelled"
+
 }
