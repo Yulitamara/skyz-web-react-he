@@ -1610,30 +1610,51 @@ input:focus {
   font-size: 14px;
 }
 
-.kanban-container .kanban.minimize {
-  width: 40px;
+.kanban-container .kanban {
+  transition: max-height 0.5s ease, width 0.5s ease;
   overflow: hidden;
 }
+.kanban-container .kanban .main-title {
+  transition: padding 0.5s ease, flex-direction 0.5s ease;
+}
+.kanban-container .kanban .main-title h2 {
+  transition: transform 0.5s ease;
+}
+.kanban-container .kanban .columns-container {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+  transform: scaleY(1);
+  transform-origin: top;
+}
+.kanban-container .kanban .kanban-column {
+  transition: opacity 0.5s ease;
+}
+.kanban-container .kanban .kanban-column h3,
+.kanban-container .kanban .kanban-column .kanban-tasks-list {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+.kanban-container .kanban.minimize {
+  width: 40px;
+  max-height: 200px;
+}
 .kanban-container .kanban.minimize .main-title {
-  justify-content: space-between;
   padding: 1.3rem 0 3.3rem 0;
-  height: 100%;
   flex-direction: column-reverse;
+  height: 100%;
 }
 .kanban-container .kanban.minimize .main-title h2 {
   transform: rotate(-90deg);
 }
 .kanban-container .kanban.minimize .columns-container {
-  min-height: 500px;
+  opacity: 0;
+  transform: scaleY(0);
+  pointer-events: none;
 }
-.kanban-container .kanban.minimize .kanban-column {
-  background-color: transparent;
-}
-.kanban-container .kanban.minimize .kanban-column h3 {
-  display: none;
-}
+.kanban-container .kanban.minimize .kanban-column h3,
 .kanban-container .kanban.minimize .kanban-column .kanban-tasks-list {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .dragging-over {
@@ -1676,6 +1697,15 @@ input:focus {
   border-radius: 10px;
 }
 
+@media screen and (max-width: 768px) {
+  .kanban-container .kanban:not(:first-child) {
+    display: none;
+  }
+  .kanban-container {
+    grid-gap: 0;
+    gap: 0;
+  }
+}
 *,
 *::before,
 *::after {

@@ -580,6 +580,22 @@
   "kanban-inprogress": "In Progress",
   "kanban-pending": "Pending",
   "kanban-completed": "Completed",
-  "kanban-cancelled": "Cancelled"
-
+  "kanban-cancelled": "Cancelled",
+  "kanban-software-development": "Software Development",
+  "kanban-code-handover": "Code Handover",
+  "kanban-code-handover-content": "Transfer the code to other developers for testing and integration.",
+  "kanban-moran": "Moran Ben Ari",
+  "kanban-customer-service": "Customer Service",
+  "kanban-technical-issues": "Technical Issues",
+  "kanban-technical-issues-content": "Resolve customers' technical issues.",  
+  "kanban-avi": "Avi Levi",
+  "kanban-development": "Development",
+  "kanban-accounting": "Accounting",
+  "kanban-financial-reports": "Financial Reports",
+  "kanban-financial-reports-content": "Prepare the company's monthly financial reports.",
+  "kanban-anat": "Anat Cohen",
+  "kanban-operations": "Operations",
+  "kanban-inspection": "Inspection",
+  "kanban-inspection-content": "Check the condition of the company’s equipment and infrastructure.",
+  "kanban-alex": "Alex May"
 }

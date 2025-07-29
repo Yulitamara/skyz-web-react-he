@@ -15,7 +15,6 @@
 
 }
 .kanban-container {
-
     grid-gap: 1rem;
     display: grid;
     gap: 1rem;
@@ -154,36 +153,67 @@
   }
 }
 
-.kanban-container .kanban.minimize {
-  width: 40px;
+
+
+.kanban-container .kanban {
+  transition: max-height 0.5s ease, width 0.5s ease;
   overflow: hidden;
 
   .main-title {
-    justify-content: space-between;
-    padding: 1.3rem 0 3.3rem 0;
-    height: 100%;
-    flex-direction: column-reverse;
+    transition: padding 0.5s ease, flex-direction 0.5s ease;
 
     h2 {
-      // display: none;
-      transform: rotate(-90deg);
+      transition: transform 0.5s ease;
     }
   }
-  .columns-container {
-    // background-color: #fff;
-    min-height: 500px;
-  }
-  .kanban-column {
-    background-color: transparent;
 
-    h3 {
-      display: none;
-    }
+  .columns-container {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+
+  .kanban-column {
+    transition: opacity 0.5s ease;
+
+    h3,
     .kanban-tasks-list {
-      display: none;
+      transition: opacity 0.5s ease;
+      opacity: 1;
+    }
+  }
+
+  &.minimize {
+    width: 40px;
+    max-height: 200px;
+
+    .main-title {
+      padding: 1.3rem 0 3.3rem 0;
+      flex-direction: column-reverse;
+    height: 100%;
+
+      h2 {
+        transform: rotate(-90deg);
+      }
+    }
+
+    .columns-container {
+      opacity: 0;
+      transform: scaleY(0);
+      pointer-events: none;
+    }
+
+    .kanban-column {
+      h3,
+      .kanban-tasks-list {
+        opacity: 0;
+        pointer-events: none;
+      }
     }
   }
 }
+
 
 .dragging-over {
   background-color: #e0f7fa;
@@ -221,3 +251,13 @@
   border-radius: 10px;
 }
 
+
+@media screen and (max-width: 768px) {
+  .kanban-container .kanban:not(:first-child) {
+    display: none;
+  }
+  .kanban-container {
+    grid-gap:0;
+    gap: 0;
+}
+}

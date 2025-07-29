@@ -577,8 +577,26 @@
   "kanban-meeting-content": "לפגוש עם לקוח פוטנציאלי חדש ולספק לו הצעת מחיר.",
   "kanban-dor": "דור אלון",
   "kanban-sales": "מכירות",
-    "kanban-inprogress": "בתהליך",
+  "kanban-inprogress": "בתהליך",
   "kanban-pending": "בהמתנה",
   "kanban-completed": "בוצע",
-  "kanban-cancelled": "מבוטל"
+  "kanban-cancelled": "מבוטל",
+  "kanban-software-development": "פיתוח תוכנה",
+  "kanban-code-handover": "העברת קוד",
+  "kanban-code-handover-content": "להעביר את הקוד למפתחים אחרים לצורך בדיקה ואינטגרציה.",  
+  "kanban-moran": "מורן בן ארי",
+  "kanban-customer-service": "שירות לקוחות",
+  "kanban-technical-issues": "בעיות טכניות",
+  "kanban-technical-issues-content": "לפתור בעיות טכניות של לקוחות.",  
+  "kanban-avi": "אבי לוי",
+  "kanban-development": "פיתוח",
+  "kanban-accounting": "חשבונאות",
+  "kanban-financial-reports": "דוחות כספיים",
+  "kanban-financial-reports-content": "להכין דוחות כספיים חודשיים של החברה.",
+  "kanban-anat": "ענת כהן",
+    "kanban-operations": "תפעול",
+  "kanban-inspection": "בדיקת תקינות",
+  "kanban-inspection-content": "לבדוק את תקינות הציוד והתשתיות של החברה.",
+  "kanban-alex": "אלכס מאי"
+
 }
