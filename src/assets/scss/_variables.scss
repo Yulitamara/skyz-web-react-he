@@ -23,6 +23,14 @@
   --kanban-text: #1a1a1a;          /* טקסט רגיל */
   --kanban-subtext: #444;          /* טקסט משני */
   --kanban-border: #e0e0e0;        /* גבולות */
+  --kanban-task-bg: #fbfbfb;
+  --kanban-task-bg-hover: #fbfbfb;
+  --kanban-task-drag-bg: #e3f2fd;
+  --kanban-task-drag-border: #64b5f6;
+  --kanban-dropzone-bg: #e3f2fd;
+  --kanban-dropzone-border: #1e88e5;
+  --kanban-dropzone-highlight-bg: #f1f8ff;
+
 }
 
 .dark-mode {
@@ -43,11 +51,19 @@
   --on-red: #ffdad2;
   --green: #0f2000;
   --on-green: #c9ee9e;
-    --kanban-open-bg: #1f4031;
+  --kanban-open-bg: #1f4031;
   --kanban-inprogress-bg: #4a430b;
   --kanban-closed-bg: #263055;
   --kanban-card-bg: #2b2b2b;
   --kanban-text: #ffffff;
   --kanban-subtext: #cccccc;
   --kanban-border: #444444;
+  --kanban-task-bg: #2c2c2c;
+  --kanban-task-bg-hover: #3a3a3a;
+    --kanban-task-drag-bg: #394b59;
+  --kanban-task-drag-border: #90caf9;
+
+  --kanban-dropzone-bg: #2d3e50;
+  --kanban-dropzone-border: #64b5f6;
+  --kanban-dropzone-highlight-bg: #243646;
 }

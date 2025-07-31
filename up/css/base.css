@@ -24,6 +24,13 @@
   --kanban-text: #1a1a1a; /* טקסט רגיל */
   --kanban-subtext: #444; /* טקסט משני */
   --kanban-border: #e0e0e0; /* גבולות */
+  --kanban-task-bg: #fbfbfb;
+  --kanban-task-bg-hover: #fbfbfb;
+  --kanban-task-drag-bg: #e3f2fd;
+  --kanban-task-drag-border: #64b5f6;
+  --kanban-dropzone-bg: #e3f2fd;
+  --kanban-dropzone-border: #1e88e5;
+  --kanban-dropzone-highlight-bg: #f1f8ff;
 }
 
 .dark-mode {
@@ -51,6 +58,13 @@
   --kanban-text: #ffffff;
   --kanban-subtext: #cccccc;
   --kanban-border: #444444;
+  --kanban-task-bg: #2c2c2c;
+  --kanban-task-bg-hover: #3a3a3a;
+  --kanban-task-drag-bg: #394b59;
+  --kanban-task-drag-border: #90caf9;
+  --kanban-dropzone-bg: #2d3e50;
+  --kanban-dropzone-border: #64b5f6;
+  --kanban-dropzone-highlight-bg: #243646;
 }
 
 :root {
@@ -78,6 +92,13 @@
   --kanban-text: #1a1a1a; /* טקסט רגיל */
   --kanban-subtext: #444; /* טקסט משני */
   --kanban-border: #e0e0e0; /* גבולות */
+  --kanban-task-bg: #fbfbfb;
+  --kanban-task-bg-hover: #fbfbfb;
+  --kanban-task-drag-bg: #e3f2fd;
+  --kanban-task-drag-border: #64b5f6;
+  --kanban-dropzone-bg: #e3f2fd;
+  --kanban-dropzone-border: #1e88e5;
+  --kanban-dropzone-highlight-bg: #f1f8ff;
 }
 
 .dark-mode {
@@ -105,6 +126,13 @@
   --kanban-text: #ffffff;
   --kanban-subtext: #cccccc;
   --kanban-border: #444444;
+  --kanban-task-bg: #2c2c2c;
+  --kanban-task-bg-hover: #3a3a3a;
+  --kanban-task-drag-bg: #394b59;
+  --kanban-task-drag-border: #90caf9;
+  --kanban-dropzone-bg: #2d3e50;
+  --kanban-dropzone-border: #64b5f6;
+  --kanban-dropzone-highlight-bg: #243646;
 }
 
 .navbar {
@@ -215,6 +243,13 @@
   --kanban-text: #1a1a1a; /* טקסט רגיל */
   --kanban-subtext: #444; /* טקסט משני */
   --kanban-border: #e0e0e0; /* גבולות */
+  --kanban-task-bg: #fbfbfb;
+  --kanban-task-bg-hover: #fbfbfb;
+  --kanban-task-drag-bg: #e3f2fd;
+  --kanban-task-drag-border: #64b5f6;
+  --kanban-dropzone-bg: #e3f2fd;
+  --kanban-dropzone-border: #1e88e5;
+  --kanban-dropzone-highlight-bg: #f1f8ff;
 }
 
 .dark-mode {
@@ -242,6 +277,13 @@
   --kanban-text: #ffffff;
   --kanban-subtext: #cccccc;
   --kanban-border: #444444;
+  --kanban-task-bg: #2c2c2c;
+  --kanban-task-bg-hover: #3a3a3a;
+  --kanban-task-drag-bg: #394b59;
+  --kanban-task-drag-border: #90caf9;
+  --kanban-dropzone-bg: #2d3e50;
+  --kanban-dropzone-border: #64b5f6;
+  --kanban-dropzone-highlight-bg: #243646;
 }
 
 .blogs {
@@ -391,6 +433,13 @@
   --kanban-text: #1a1a1a; /* טקסט רגיל */
   --kanban-subtext: #444; /* טקסט משני */
   --kanban-border: #e0e0e0; /* גבולות */
+  --kanban-task-bg: #fbfbfb;
+  --kanban-task-bg-hover: #fbfbfb;
+  --kanban-task-drag-bg: #e3f2fd;
+  --kanban-task-drag-border: #64b5f6;
+  --kanban-dropzone-bg: #e3f2fd;
+  --kanban-dropzone-border: #1e88e5;
+  --kanban-dropzone-highlight-bg: #f1f8ff;
 }
 
 .dark-mode {
@@ -418,6 +467,13 @@
   --kanban-text: #ffffff;
   --kanban-subtext: #cccccc;
   --kanban-border: #444444;
+  --kanban-task-bg: #2c2c2c;
+  --kanban-task-bg-hover: #3a3a3a;
+  --kanban-task-drag-bg: #394b59;
+  --kanban-task-drag-border: #90caf9;
+  --kanban-dropzone-bg: #2d3e50;
+  --kanban-dropzone-border: #64b5f6;
+  --kanban-dropzone-highlight-bg: #243646;
 }
 
 .about {
@@ -459,6 +515,13 @@
   --kanban-text: #1a1a1a; /* טקסט רגיל */
   --kanban-subtext: #444; /* טקסט משני */
   --kanban-border: #e0e0e0; /* גבולות */
+  --kanban-task-bg: #fbfbfb;
+  --kanban-task-bg-hover: #fbfbfb;
+  --kanban-task-drag-bg: #e3f2fd;
+  --kanban-task-drag-border: #64b5f6;
+  --kanban-dropzone-bg: #e3f2fd;
+  --kanban-dropzone-border: #1e88e5;
+  --kanban-dropzone-highlight-bg: #f1f8ff;
 }
 
 .dark-mode {
@@ -486,6 +549,13 @@
   --kanban-text: #ffffff;
   --kanban-subtext: #cccccc;
   --kanban-border: #444444;
+  --kanban-task-bg: #2c2c2c;
+  --kanban-task-bg-hover: #3a3a3a;
+  --kanban-task-drag-bg: #394b59;
+  --kanban-task-drag-border: #90caf9;
+  --kanban-dropzone-bg: #2d3e50;
+  --kanban-dropzone-border: #64b5f6;
+  --kanban-dropzone-highlight-bg: #243646;
 }
 
 .hero {
@@ -572,6 +642,13 @@
   --kanban-text: #1a1a1a; /* טקסט רגיל */
   --kanban-subtext: #444; /* טקסט משני */
   --kanban-border: #e0e0e0; /* גבולות */
+  --kanban-task-bg: #fbfbfb;
+  --kanban-task-bg-hover: #fbfbfb;
+  --kanban-task-drag-bg: #e3f2fd;
+  --kanban-task-drag-border: #64b5f6;
+  --kanban-dropzone-bg: #e3f2fd;
+  --kanban-dropzone-border: #1e88e5;
+  --kanban-dropzone-highlight-bg: #f1f8ff;
 }
 
 .dark-mode {
@@ -599,6 +676,13 @@
   --kanban-text: #ffffff;
   --kanban-subtext: #cccccc;
   --kanban-border: #444444;
+  --kanban-task-bg: #2c2c2c;
+  --kanban-task-bg-hover: #3a3a3a;
+  --kanban-task-drag-bg: #394b59;
+  --kanban-task-drag-border: #90caf9;
+  --kanban-dropzone-bg: #2d3e50;
+  --kanban-dropzone-border: #64b5f6;
+  --kanban-dropzone-highlight-bg: #243646;
 }
 
 .products {
@@ -664,6 +748,13 @@
   --kanban-text: #1a1a1a; /* טקסט רגיל */
   --kanban-subtext: #444; /* טקסט משני */
   --kanban-border: #e0e0e0; /* גבולות */
+  --kanban-task-bg: #fbfbfb;
+  --kanban-task-bg-hover: #fbfbfb;
+  --kanban-task-drag-bg: #e3f2fd;
+  --kanban-task-drag-border: #64b5f6;
+  --kanban-dropzone-bg: #e3f2fd;
+  --kanban-dropzone-border: #1e88e5;
+  --kanban-dropzone-highlight-bg: #f1f8ff;
 }
 
 .dark-mode {
@@ -691,6 +782,13 @@
   --kanban-text: #ffffff;
   --kanban-subtext: #cccccc;
   --kanban-border: #444444;
+  --kanban-task-bg: #2c2c2c;
+  --kanban-task-bg-hover: #3a3a3a;
+  --kanban-task-drag-bg: #394b59;
+  --kanban-task-drag-border: #90caf9;
+  --kanban-dropzone-bg: #2d3e50;
+  --kanban-dropzone-border: #64b5f6;
+  --kanban-dropzone-highlight-bg: #243646;
 }
 
 .about-us {
@@ -1190,6 +1288,13 @@ input:focus {
   --kanban-text: #1a1a1a; /* טקסט רגיל */
   --kanban-subtext: #444; /* טקסט משני */
   --kanban-border: #e0e0e0; /* גבולות */
+  --kanban-task-bg: #fbfbfb;
+  --kanban-task-bg-hover: #fbfbfb;
+  --kanban-task-drag-bg: #e3f2fd;
+  --kanban-task-drag-border: #64b5f6;
+  --kanban-dropzone-bg: #e3f2fd;
+  --kanban-dropzone-border: #1e88e5;
+  --kanban-dropzone-highlight-bg: #f1f8ff;
 }
 
 .dark-mode {
@@ -1217,6 +1322,13 @@ input:focus {
   --kanban-text: #ffffff;
   --kanban-subtext: #cccccc;
   --kanban-border: #444444;
+  --kanban-task-bg: #2c2c2c;
+  --kanban-task-bg-hover: #3a3a3a;
+  --kanban-task-drag-bg: #394b59;
+  --kanban-task-drag-border: #90caf9;
+  --kanban-dropzone-bg: #2d3e50;
+  --kanban-dropzone-border: #64b5f6;
+  --kanban-dropzone-highlight-bg: #243646;
 }
 
 .product-page-container {
@@ -1475,7 +1587,6 @@ input:focus {
 .kanban-wrapper {
   border-radius: 1rem;
   box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
-  overflow: hidden;
   width: min-content;
   margin-bottom: 2rem;
 }
@@ -1494,7 +1605,6 @@ input:focus {
 .kanban-container .kanban {
   background-color: var(--white);
   border-radius: 1rem;
-  width: 400px;
 }
 .kanban-container .kanban .main-title {
   padding: 0 1rem;
@@ -1564,7 +1674,7 @@ input:focus {
   padding-top: 0.5rem;
 }
 .kanban-container .kanban .kanban-column .kanban-tasks-list.dragging-over {
-  background-color: #e0f7fa;
+  background-color: var(--background);
 }
 .kanban-container .kanban .kanban-column .kanban-tasks-list.can-drop {
   border: 2px dashed #1e88e5;
@@ -1573,7 +1683,7 @@ input:focus {
   border: 2px dashed #1e88e5;
 }
 .kanban-container .kanban .kanban-task {
-  background-color: #fbfbfb;
+  background-color: var(--kanban-task-bg);
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 8px;
@@ -1587,7 +1697,7 @@ input:focus {
   border: 2px dashed #1e88e5;
 }
 .kanban-container .kanban .kanban-task:hover {
-  background-color: #f5f5f5;
+  background-color: var(--kanban-task-bg-hover);
 }
 .kanban-container .kanban .kanban-task .task-title-container {
   display: flex;
@@ -1614,7 +1724,6 @@ input:focus {
 
 .kanban-container .kanban {
   transition: max-height 0.5s ease, width 0.5s ease;
-  overflow: hidden;
 }
 .kanban-container .kanban .main-title {
   transition: padding 0.5s ease, flex-direction 0.5s ease;
@@ -1674,23 +1783,23 @@ input:focus {
 
 .kanban-task.dragging {
   opacity: 0.8;
-  background-color: #e3f2fd;
-  border: 2px solid #64b5f6;
+  background-color: var(--kanban-task-drag-bg);
+  border: 2px solid var(--kanban-task-drag-border);
   transform: rotate(2deg);
   transition: all 0.2s ease;
 }
 
 /* אזור המשימות בזמן גרירה */
 .kanban-tasks-list.highlight-drop {
-  border: 2px dashed #1e88e5;
+  border: 2px dashed var(--kanban-dropzone-border);
   border-radius: 6px;
   min-height: 80px;
-  background-color: #e3f2fd; /* כחול בהיר */
+  background-color: var(--kanban-dropzone-bg);
 }
 
 .highlight-drop {
-  border: 2px dashed #1e88e5;
-  background-color: #f1f8ff;
+  border: 2px dashed var(--kanban-dropzone-border);
+  background-color: var(--kanban-dropzone-highlight-bg);
 }
 
 .kanban-group {
@@ -1708,6 +1817,19 @@ input:focus {
     gap: 0;
   }
 }
+.kanban-task.dragging {
+  position: fixed !important;
+  right: 0;
+  z-index: 9999;
+  pointer-events: none;
+  z-index: 9999 !important;
+  width: 300px;
+  max-width: 90vw;
+  pointer-events: none;
+  transform: rotate(2deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
 *,
 *::before,
 *::after {
