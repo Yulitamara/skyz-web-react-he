@@ -11,11 +11,11 @@ i18next
     debug: true,
     fallbackLng: "en",
     saveMissing: true,
-
-    detection: {
-      order: ["navigator", "localStorage", "cookie", "htmlTag"],
-      caches: ["localStorage"],
-    },
+    
+detection: {
+  order: ["htmlTag", "localStorage", "cookie", "navigator"],
+  caches: ["localStorage"],
+},
 
     interpolation: {
       escapeValue: false,
