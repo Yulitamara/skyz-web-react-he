@@ -1339,9 +1339,11 @@ input:focus {
 .advantages .advantage h2 {
   text-align: center;
   font-size: 23px;
+  min-height: 2em;
 }
 .advantages .advantage p {
   font-size: 19px;
+  flex-grow: 1;
 }
 .advantages .advantage .icon-container {
   background-color: var(--pink);

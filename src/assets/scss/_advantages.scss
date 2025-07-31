@@ -16,13 +16,16 @@
     color: var(--text-color);
     padding: 2rem;
     border-radius: 1rem;
+    
     h2 {
       text-align: center;
       font-size: 23px;
+      min-height: 2em;
     }
     p {
       font-size: 19px;
       //   height: 140px;
+       flex-grow: 1; 
     }
     .icon-container {
       background-color: var(--pink);
