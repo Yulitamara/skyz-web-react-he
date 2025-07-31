@@ -564,9 +564,9 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 14rem 4vw 8rem 4vw;
+  padding: 8rem 4vw 4rem 4vw;
   background-color: var(--background);
-  min-height: 60vh;
+  min-height: 20vh;
   color: var(--text-color);
 }
 .hero h1 {
@@ -1589,6 +1589,7 @@ input:focus {
   box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
   width: min-content;
   margin-bottom: 2rem;
+  overflow: auto;
 }
 
 .kanban-container {
@@ -1599,7 +1600,7 @@ input:focus {
   grid-template-columns: repeat(3, minmax(min-content, 40px));
   justify-content: flex-start;
   padding: 1rem;
-  overflow-x: auto;
+  overflow-x: scroll;
   transition: all 0.3s ease;
 }
 .kanban-container .kanban {
@@ -2087,7 +2088,6 @@ textarea {
   .btns-container {
     flex-direction: column;
     text-align: center;
-    width: 100%;
   }
 }
 
