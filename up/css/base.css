@@ -709,6 +709,7 @@
   display: flex;
   line-height: normal;
   align-items: flex-end;
+  flex-direction: column-reverse;
 }
 .products .product .header img {
   width: 100px;
@@ -1176,7 +1177,7 @@ input:focus {
   margin-top: 4rem;
 }
 .contact .content .info .info-img img {
-  width: 350px;
+  width: 250px;
 }
 .contact .content .form {
   background-color: var(--background);
@@ -1215,7 +1216,7 @@ input:focus {
     margin-top: 3rem;
   }
   .contact .content .info .info-img img {
-    width: 250px;
+    width: 150px;
   }
 }
 @media screen and (max-width: 550px) {

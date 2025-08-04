@@ -1,23 +1,15 @@
-import salesLight from "../assets/imgs/products-imgs/sales-light.png";
-import salesDark from "../assets/imgs/products-imgs/sales-dark.png";
-import marketingLight from "../assets/imgs/products-imgs/marketing-light.png";
-import marketingDark from "../assets/imgs/products-imgs/marketing-dark.png";
-import serviceLight from "../assets/imgs/products-imgs/service-light.png";
-import serviceDark from "../assets/imgs/products-imgs/service-dark.png";
+import salesImg from "../assets/imgs/products-imgs/sales-light.png";
+import marketingImg from "../assets/imgs/products-imgs/marketing-light.png";
+import serviceImg from "../assets/imgs/products-imgs/service-light.png";
 
 import "../assets/scss/_products.scss";
 import "../assets/scss/base.scss";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-const Products = ({ darkMode }) => {
-  console.log("Dark Mode:", darkMode);
-
-  const salesImg = darkMode ? salesDark : salesLight;
-  const marketingImg = darkMode ? marketingDark : marketingLight;
-  const serviceImg = darkMode ? serviceDark : serviceLight;
-
+const Products = () => {
   const { t } = useTranslation();
+
   return (
     <section className="products">
       <div className="product">

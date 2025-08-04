@@ -1,71 +1,90 @@
-import React from "react";
+import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { useTranslation } from "react-i18next";
 
 export const ContactForm = () => {
+  const { t } = useTranslation();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const isValidPhone = (phone) => /^[0-9]{7,15}$/.test(phone);
+
   const sendEmail = (e) => {
     e.preventDefault();
 
-    const contactForm = e.target; // Get the form element
+    const contactForm = e.target;
     const contactName = contactForm.querySelector('input[name="user_name"]');
     const contactEmail = contactForm.querySelector('input[name="user_email"]');
-    const contactMessage = contactForm.querySelector(
-      'textarea[name="message"]'
-    );
+    const contactMessage = contactForm.querySelector('textarea[name="message"]');
     const contactPhone = contactForm.querySelector('input[name="phone"]');
-    const contactOrganization = contactForm.querySelector(
-      'input[name="organization"]'
-    );
+    const contactOrganization = contactForm.querySelector('input[name="organization"]');
     const contactError = contactForm.querySelector("#contact-error");
+    const submitButton = contactForm.querySelector('input[type="submit"]');
 
-    // Check if the field has a value
+    contactError.textContent = "";
+
     if (
       contactName.value === "" ||
       contactEmail.value === "" ||
       contactMessage.value === "" ||
       contactPhone.value === ""
     ) {
-      // Add and remove color
       contactError.classList.remove("color-blue");
       contactError.classList.add("color-red");
-
-      // Show message
-      contactError.textContent = "Write all the input fields 📥";
-    } else {
-      // serviceID - templateID - #form - publickey
-      emailjs
-        .sendForm(
-          "service_ky4w1yd", // Replace with your service ID
-          "template_fa15r54", // Replace with your template ID
-          "#contact-form",
-          "rexvJSVw22UHGT0HS" // Replace with your user ID (public key)
-        )
-        .then(
-          () => {
-            // Show message and add color
-            contactError.classList.add("color-blue");
-            contactError.textContent = "Message sent ✅";
-
-            // Remove message after five seconds
-            setTimeout(() => {
-              contactError.textContent = "";
-            }, 5000);
-          },
-          (error) => {
-            alert("OOPS! SOMETHING HAS FAILED...", error);
-          }
-        );
-
-      // To clear the input field
-      contactName.value = "";
-      contactEmail.value = "";
-      contactMessage.value = "";
-      contactPhone.value = "";
-      contactOrganization.value = "";
+      contactError.textContent = "Please fill in all required fields 📥";
+      return;
     }
+
+    if (!isValidEmail(contactEmail.value)) {
+      contactError.classList.remove("color-blue");
+      contactError.classList.add("color-red");
+      contactError.textContent = "Please enter a valid email address 📧";
+      return;
+    }
+
+    if (!isValidPhone(contactPhone.value)) {
+      contactError.classList.remove("color-blue");
+      contactError.classList.add("color-red");
+      contactError.textContent = "Please enter a valid phone number 📞";
+      return;
+    }
+
+    submitButton.disabled = true;
+    setIsLoading(true);
+
+    emailjs
+      .sendForm(
+        "service_ky4w1yd",
+        "template_fa15r54",
+        "#contact-form",
+        "rexvJSVw22UHGT0HS"
+      )
+      .then(() => {
+        contactError.classList.remove("color-red");
+        contactError.classList.add("color-blue");
+        contactError.textContent = "Message sent ✅";
+
+        contactName.value = "";
+        contactEmail.value = "";
+        contactMessage.value = "";
+        contactPhone.value = "";
+        contactOrganization.value = "";
+
+        setTimeout(() => {
+          contactError.textContent = "";
+        }, 5000);
+      })
+      .catch(() => {
+        contactError.classList.remove("color-blue");
+        contactError.classList.add("color-red");
+        contactError.textContent = "Failed to send. Please try again ❌";
+      })
+      .finally(() => {
+        submitButton.disabled = false;
+        setIsLoading(false);
+      });
   };
 
-  const { t } = useTranslation();
   return (
     <form
       autoComplete="off"
@@ -137,15 +156,14 @@ export const ContactForm = () => {
         </div>
         <div className="textarea">
           <label className="title">{t("contact-form-message")}</label>
-          <textarea name="message" id="message" className="input"></textarea>
+          <textarea name="message" id="message" className="input" required></textarea>
         </div>
         <p className="contact__error" id="contact-error"></p>
       </div>
       <input
         type="submit"
-        value={t("send-btn")}
+        value={isLoading ? t("sending-btn") || "Sending..." : t("send-btn")}
         className="btn btn-orange"
-        onSubmit={sendEmail}
       />
     </form>
   );

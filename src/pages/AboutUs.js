@@ -1,6 +1,6 @@
 import "../assets/scss/_about-us.scss";
 import "../assets/scss/base.scss";
-import officeImg from "../assets/imgs/undraw_in_the_office_re_jtgc.svg";
+import officeImg from "../assets/imgs/aboutus.png";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
