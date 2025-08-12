@@ -1,7 +1,11 @@
 // Filters.js
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 
 const Filters = ({ onSelectFilter }) => {
+    const { t } = useTranslation();
+  
   const [selectedFilters, setSelectedFilters] = useState([]);
 
   const handleFilterClick = (filter) => {
@@ -21,7 +25,7 @@ const Filters = ({ onSelectFilter }) => {
         }
         onClick={() => handleFilterClick("all")}
       >
-        כל המאמרים
+        {t("filter-all-articles")}
       </button>
       <button
         className={selectedFilters.includes("CRM") ? "filter-clicked" : ""}
@@ -35,13 +39,13 @@ const Filters = ({ onSelectFilter }) => {
         }
         onClick={() => handleFilterClick("הצלחת לקוח")}
       >
-        הצלחת לקוח
+       {t("filter-customer-success")}
       </button>
       <button
         className={selectedFilters.includes("מכירות") ? "filter-clicked" : ""}
         onClick={() => handleFilterClick("מכירות")}
       >
-        מכירות
+       {t("filter-sales")}
       </button>
       <button
         className={
@@ -49,19 +53,19 @@ const Filters = ({ onSelectFilter }) => {
         }
         onClick={() => handleFilterClick("ניהול לקוחות")}
       >
-        ניהול לקוחות
+       {t("filter-customer-management")}
       </button>
       <button
         className={selectedFilters.includes("שיווק") ? "filter-clicked" : ""}
         onClick={() => handleFilterClick("שיווק")}
       >
-        שיווק
+        {t("filter-marketing")}
       </button>
       <button
         className={selectedFilters.includes("שירות") ? "filter-clicked" : ""}
         onClick={() => handleFilterClick("שירות")}
       >
-        שירות
+        {t("filter-service")}
       </button>
     </div>
   );

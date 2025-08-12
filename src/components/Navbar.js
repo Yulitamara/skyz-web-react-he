@@ -53,11 +53,11 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
         <Link to="/" className="link" onClick={handleMenuItemClick}>
           {t("nav-home")}
         </Link>
-        {i18n.resolvedLanguage === "he" && (
+      
           <Link to="/בלוג/" className="link" onClick={handleMenuItemClick}>
-            בלוג
+            {t("blog")}
           </Link>
-        )}
+        
         <Link
           to="/skyzcrm-ניהול-קשרי-לקוחות/אודות-skyzcrm/"
           className="link"
@@ -86,7 +86,7 @@ const Navbar = ({ onToggleDarkMode, darkMode }) => {
           {darkMode ? "light_mode" : "dark_mode"}
         </span>
         <div className="lang">
-          {currentPath !== "/%D7%91%D7%9C%D7%95%D7%92/" &&
+          {
             Object.keys(lngs).map((lng) => (
               <button
                 className={`lang-btn ${

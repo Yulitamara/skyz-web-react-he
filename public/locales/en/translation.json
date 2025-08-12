@@ -597,5 +597,14 @@
   "kanban-operations": "Operations",
   "kanban-inspection": "Inspection",
   "kanban-inspection-content": "Check the condition of the company’s equipment and infrastructure.",
-  "kanban-alex": "Alex May"
+  "kanban-alex": "Alex May",
+  "//Blogs": "comment",
+  "blog": "Blog",
+  "blog-p": "Welcome to the Skyz CRM Blog. Here you’ll find professional articles packed with essential insights and practical tips across sales, marketing, service, customer success, and CRM (Customer Relationship Management). Our posts cover innovations, analyses, and global trends to help you work smarter in these key areas. We hope you get the most out of the blog.",
+  "filter-all-articles": "All Articles",
+  "filter-service": "Service",
+  "filter-marketing": "Marketing",
+  "filter-customer-management": "Customer Management",
+  "filter-sales": "Sales",
+  "filter-customer-success": "Customer Success"
 }

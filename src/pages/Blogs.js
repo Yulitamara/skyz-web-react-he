@@ -6,8 +6,12 @@ import "../assets/scss/base.scss";
 import Blog from "../components/Blog";
 import BlogData from "../data/BlogData";
 import Filters from "../components/Filters";
+import { useTranslation } from "react-i18next";
+
 
 const Blogs = () => {
+  const { t } = useTranslation();
+
   const blogsPerPage = 9;
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedFilters, setSelectedFilters] = useState([]);
@@ -50,11 +54,7 @@ const Blogs = () => {
       </Helmet>
       <h1>Skyz Blog</h1>
       <p>
-        ברוך בואכם לאתר הבלוגים של Skyz CRM. האתר כולל מאמרים מקצועיים, אשר
-        יציידו אתכם במידע חיוני וטיפים מעניינים, בתחומי מכירות, שיווק, שירות,
-        הצלחת לקוח ו- CRM (ניהול קשרי לקוחות). המאמרים יציגו לכם חידושים,
-        ניתוחים ומגמות עולמיות לצורך התייעלות בכל אחד מתחומים חשובים אלו. נשמח
-        מאוד אם תפיקו מאתר בלוגים זה את המיטב.
+       {t("blog-p")}
       </p>
       <Filters onSelectFilter={handleSelectFilter} />
       <div className="blogs-container">
@@ -63,11 +63,12 @@ const Blogs = () => {
             <Link to={`/${blog.url}/`}>
               {/* Use Link to navigate to the individual blog page */}
               <h3 className="blog-title">{blog.title}</h3>
-            </Link>
             <div className="img-container">
               <img src={blog.img} alt={blog.title} />
             </div>
             <p>{blog.short}</p>
+            </Link>
+
           </div>
         ))}
       </div>
