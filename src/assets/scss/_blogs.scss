@@ -128,3 +128,20 @@
     }
   }
 }
+
+
+.blog-post {
+  margin-top: 10rem;
+  h1 {
+  padding: 1rem 3rem;
+
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  padding: 1rem 3rem;
+
+  }
+
+}

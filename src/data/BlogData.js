@@ -686,6 +686,7 @@ const BlogData = [
     url: "מדריך-מעשי-לבניית-אפיון-הגדרת-צרכי-הלק",
     filters: ["all", "CRM"],
     author: "מכירות אימפקט",
+   
     img: "/blogs/blog-99.png",
   },
 ];

@@ -408,6 +408,19 @@
     height: 230px;
   }
 }
+.blog-post {
+  margin-top: 10rem;
+}
+.blog-post h1 {
+  padding: 1rem 3rem;
+}
+.blog-post .content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 1rem 3rem;
+}
+
 :root {
   --text-link: #255fa4;
   --text-color: #1a1c1e;
