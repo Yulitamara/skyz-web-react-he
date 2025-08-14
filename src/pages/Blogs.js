@@ -160,7 +160,7 @@ const Blogs = () => {
       </Helmet>
 
       <h1>Skyz Blog</h1>
-      <p>{t("blog-p")}</p>
+      <p className="blogs-header-p">{t("blog-p")}</p>
 
       <Filters onSelectFilter={handleSelectFilter} />
 

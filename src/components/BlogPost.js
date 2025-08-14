@@ -62,14 +62,14 @@ const BlogPost = () => {
       <h1>{post.title}</h1>
 
       {post.img && (
-        <div className="hero">
-          <img src={post.img} alt={post.title} />
-        </div>
+            <div className="img-container">
+              <img className="blog-post-img" src={post.img} alt={post.title} />
+            </div>
       )}
 
       <article className="content" dangerouslySetInnerHTML={html} />
 
-      <p style={{ marginTop: 24 }}>
+      <p className="back-to-articles">
         <Link to="/בלוג/">← חזרה לכל המאמרים</Link>
       </p>
     </section>
