@@ -9,8 +9,12 @@ const BlogPost = () => {
   const [post, setPost] = useState(null);
   const [notFound, setNotFound] = useState(false);
 
+  const isHe = i18n.language?.startsWith("he");
+  const dir = isHe ? "rtl" : "ltr";
+  const lang = isHe ? "he" : "en";
+
   useEffect(() => {
-    const lng = i18n.language?.startsWith("he") ? "he" : "en";
+    const lng = isHe ? "he" : "en";
     import(`../data/blogs.${lng}.json`)
       .then((m) => {
         const raw = m.default?.blogs ?? [];
@@ -20,57 +24,63 @@ const BlogPost = () => {
           content: Array.isArray(b.content) ? b.content.join("") : b.content,
         }));
         const found = normalized.find((b) => b.url === url);
-        if (found) {
-          setPost(found);
-          setNotFound(false);
-        } else {
-          setNotFound(true);
-        }
+        setPost(found || null);
+        setNotFound(!found);
       })
       .catch(() => setNotFound(true));
-  }, [i18n.language, url]);
+  }, [isHe, url]);
 
   const html = useMemo(() => ({ __html: post?.content || "" }), [post]);
 
   if (notFound) {
     return (
-      <section dir="rtl" className="blog-post">
-        <h1>הפוסט לא נמצא</h1>
-        <p>
-          <Link to="/בלוג/">חזרה לבלוג</Link>
-        </p>
+      <section dir={dir} className="blog-post">
+        {/* לא משנים את <html> ולא את התפריט */}
+        <Helmet>
+          <title>{isHe ? "הפוסט לא נמצא" : "Post not found"} | SkyzCRM</title>
+          <meta httpEquiv="content-language" content={lang} />
+        </Helmet>
+        <h1>{isHe ? "הפוסט לא נמצא" : "Post not found"}</h1>
+        <p><Link to="/בלוג/">{isHe ? "חזרה לבלוג" : "Back to blog"}</Link></p>
       </section>
     );
   }
 
   if (!post) {
     return (
-      <section dir="rtl" className="blog-post">
-        <p>טוען…</p>
+      <section dir={dir} className="blog-post">
+        <Helmet>
+          <meta httpEquiv="content-language" content={lang} />
+        </Helmet>
+        <p>{isHe ? "טוען…" : "Loading…"}</p>
       </section>
     );
   }
 
   return (
-    <section dir="rtl" className="blog-post">
+    <section dir={dir} className="blog-post">
+      {/* לא נוגעים ב-<html dir>; רק מטא/כותרת מקומית */}
       <Helmet>
         <title>{post.title} | SkyzCRM</title>
         <meta name="description" content={post.short || post.title} />
+        <meta httpEquiv="content-language" content={lang} />
         <link rel="canonical" href={`/בלוג/${post.url}/`} />
       </Helmet>
 
       <h1>{post.title}</h1>
 
       {post.img && (
-            <div className="img-container">
-              <img className="blog-post-img" src={post.img} alt={post.title} />
-            </div>
+        <div className="img-container">
+          <img className="blog-post-img" src={post.img} alt={post.title} />
+        </div>
       )}
 
       <article className="content" dangerouslySetInnerHTML={html} />
 
       <p className="back-to-articles">
-        <Link to="/בלוג/">← חזרה לכל המאמרים</Link>
+        <Link to="/בלוג/">
+          {isHe ? "← חזרה לכל המאמרים" : "← Back to all articles"}
+        </Link>
       </p>
     </section>
   );

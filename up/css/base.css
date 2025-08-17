@@ -318,10 +318,8 @@
   text-align: center;
   padding: 0.5rem 1rem;
   color: var(--text-color);
-  height: 9.5rem;
 }
 .blogs .blogs-container .blog p {
-  font-size: 14px !important;
   padding: 0.5rem 1rem;
 }
 .blogs .blogs-container .blog .img-container {
@@ -417,6 +415,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--background);
+  padding-bottom: 1rem;
 }
 .blog-post h1 {
   padding: 2rem 3rem;
@@ -431,7 +431,7 @@
 }
 .blog-post .content h2 {
   margin-top: 1rem;
-  font-size: 24px;
+  font-size: 22px;
 }
 .blog-post .back-to-articles {
   margin-top: 24px;
@@ -1959,8 +1959,12 @@ h3 {
   letter-spacing: 0.1rem;
 }
 
+ul, ol {
+  margin: 1rem 4rem 1rem 0;
+}
+
 p, li {
-  font-size: calc(1.4rem + 0.4vw);
+  font-size: calc(1.2rem + 0.4vw);
   color: var(--text-color);
 }
 
