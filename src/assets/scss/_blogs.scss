@@ -153,8 +153,25 @@
 
    h2 {
     margin-top: 1rem;
-    font-size: 22px;
+    font-size: 21px;
+    letter-spacing: 0.1px;
    }
+   p {
+    font-size: 14px;
+    span {
+    font-size: 14px;
+
+    }
+  
+   }
+     ul, ol {
+
+      li {
+    font-size: 14px !important;
+
+      }
+    }
+
   }
   .back-to-articles {
     margin-top: 24px;

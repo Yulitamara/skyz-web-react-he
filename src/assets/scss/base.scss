@@ -96,7 +96,7 @@ ul, ol {
     margin: 1rem 4rem 1rem 0;
 }
 p, li {
-  font-size: calc(1.2rem + 0.4vw);
+  font-size: calc(1.4rem + 0.4vw);
   // text-align: center;
   color: var(--text-color);
 }
@@ -328,3 +328,171 @@ textarea {
 .btn-orange:hover {
   background-color: var(--secondary-hover);
 }
+// accessibilty
+/* בסיס */
+:root { --a11y-font-scale: 1; }
+
+/* הגדלת טקסט גלובלית (יכולה לא להתאים למקומות עם px קשיחים, וזה בסדר לרוב) */
+html, body { font-size: calc(16px * var(--a11y-font-scale)); }
+
+/* כפתור/פאנל */
+.a11y-widget { position: fixed; inset-block-end: 16px; inset-inline-end: 16px; z-index: 9999; }
+.a11y-toggle {
+  width: 44px; height: 44px; border-radius: 999px; border: 1px solid #ccc; background: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,.15); font-size: 22px; cursor: pointer;
+}
+.a11y-panel {
+  position: absolute; inset-inline-end: 0; inset-block-end: 56px;
+  min-width: 260px; background: #fff; border: 1px solid #ddd; border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18); padding: 10px; font: inherit;
+}
+.a11y-panel .row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 2px; }
+.a11y-panel .group button { margin-inline: 2px; padding: 4px 8px; }
+.a11y-panel input[type="checkbox"] { inline-size: 18px; block-size: 18px; }
+.a11y-panel .reset { margin-top: 8px; width: 100%; padding: 6px 10px; }
+
+/* ניגודיות גבוהה */
+.a11y-contrast body, .a11y-contrast .app-root { background:#000 !important; color:#fff !important; }
+.a11y-contrast a { color: #ff0 !important; }
+.a11y-contrast .card, .a11y-contrast .btn, .a11y-contrast .filter-clicked {
+  background:#111 !important; color:#fff !important; border-color:#fff !important;
+}
+
+/* גופן ידידותי לדיסלקציה (כאן עם גופני מערכת; תרצי אפשר, להוסיף @font-face ל-OpenDyslexic) */
+.a11y-dyslexia body, .a11y-dyslexia .app-root {
+  font-family: "Atkinson Hyperlegible", "OpenDyslexic", "Lexend", Arial, sans-serif !important;
+}
+
+/* קו תחתון לקישורים */
+.a11y-underline-links a { text-decoration: underline !important; }
+
+/* הדגשת פוקוס */
+.a11y-focus :focus { outline: 3px solid #ff0 !important; outline-offset: 2px !important; }
+
+/* צמצום אנימציות */
+.a11y-reduce-motion *, .a11y-reduce-motion *::before, .a11y-reduce-motion *::after {
+  animation: none !important; transition: none !important;
+}
+
+/* === בסיס === */
+:root { --a11y-font-scale: 1; }
+
+/* === Zoom אמיתי לכל העמוד === */
+/* כרום/אנדרואיד/אדג'/ספארי */
+@supports (zoom: 1) {
+  body { zoom: calc(var(--a11y-font-scale) * 100%); }
+}
+/* פיירפוקס – פולבאק עם scale על ה-root של React */
+@supports not (zoom: 1) {
+  #root {
+    transform: scale(var(--a11y-font-scale));
+    transform-origin: top left;
+    /* שלא יופיע פס גלילה רוחבי */
+    width: calc(100% / var(--a11y-font-scale));
+  }
+}
+
+/* === ניגודיות גבוהה אמיתית === */
+/* הכיתה .a11y-contrast מתווספת ל-<html> ע"י הקומפוננטה */
+.a11y-contrast body,
+.a11y-contrast body *:not(img):not(video):not(svg):not(canvas) {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+}
+
+/* שיפור קישורים וכפתורים במצב ניגודיות */
+.a11y-contrast a { color: #0ff !important; text-decoration: underline !important; }
+.a11y-contrast a:visited { color: #f0f !important; }
+
+.a11y-contrast button,
+.a11y-contrast .btn,
+.a11y-contrast input[type="button"],
+.a11y-contrast input[type="submit"] {
+  background: #111 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+.a11y-contrast input,
+.a11y-contrast textarea,
+.a11y-contrast select {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+/* === קו תחתון לקישורים (הטוגל שלך) === */
+.a11y-underline-links a { text-decoration: underline !important; }
+
+/* === הדגשת פוקוס במקלדת (הטוגל שלך) === */
+.a11y-focus :focus {
+  outline: 3px solid #ff0 !important;
+  outline-offset: 2px;
+}
+
+/* תמונות נשארות טבעיות גם בניגודיות גבוהה */
+.a11y-contrast img { filter: none !important; background: transparent !important; }
+/* משתנה שהקומפוננטה מעדכנת (1, 1.15, 1.3) */
+:root { --a11y-font-scale: 1; }
+
+/* ====== ZOOM לכל העמוד ====== */
+/* דפדפנים שתומכים ב-zoom (Chrome/Edge/Safari) */
+@supports (zoom: 1) {
+  html { zoom: calc(var(--a11y-font-scale) * 100%); }
+  /* שלא יהיה כפל-סקייל בפולבאק */
+  .App { transform: none !important; width: auto !important; }
+}
+
+/* פיירפוקס (או אם zoom לא עובד): סקייל על מעטפת האפליקציה */
+@supports not (zoom: 1) {
+  .App {
+    transform: scale(var(--a11y-font-scale));
+    transform-origin: top left;
+    /* פיצוי רוחב כדי שלא יופיע גלילה רוחבית */
+    width: calc(100% / var(--a11y-font-scale));
+  }
+}
+
+/* ====== ניגודיות גבוהה חזקה ====== */
+/* הקלאס a11y-contrast מתווסף ל-<html> ע"י הקומפוננטה */
+html.a11y-contrast body,
+html.a11y-contrast body *:not(img):not(video):not(svg):not(canvas) {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+}
+
+/* קישורים וכפתורים בולטים במצב ניגודיות */
+html.a11y-contrast a { color: #0ff !important; text-decoration: underline !important; }
+html.a11y-contrast a:visited { color: #f0f !important; }
+html.a11y-contrast button,
+html.a11y-contrast .btn,
+html.a11y-contrast input[type="button"],
+html.a11y-contrast input[type="submit"] {
+  background: #111 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+html.a11y-contrast input,
+html.a11y-contrast textarea,
+html.a11y-contrast select {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+/* קו תחתון לקישורים (הטוגל של הקומפוננטה) */
+.a11y-underline-links a { text-decoration: underline !important; }
+
+/* הדגשת פוקוס (הטוגל של הקומפוננטה) */
+.a11y-focus :focus {
+  outline: 3px solid #ff0 !important;
+  outline-offset: 2px;
+}
+
+/* אל תשנו תמונות/וידאו במצב ניגודיות */
+html.a11y-contrast img { filter: none !important; background: transparent !important; }
+

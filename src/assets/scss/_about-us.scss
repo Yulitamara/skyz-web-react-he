@@ -42,3 +42,45 @@
     }
   }
 }
+
+.about-us {
+
+  .about-us__content {
+    display: grid;
+    grid-template-columns: 1fr min(480px, 40%);
+    gap: clamp(16px, 4vw, 32px);
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .text {
+    p { margin: 0 0 1rem; }
+    h2 { margin: 2rem 0 0.75rem; font-size: clamp(2.5rem, 2.2vw, 1.5rem); }
+  }
+
+  .about-us__media img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .btns-container {
+    margin-top: 2rem;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .small-btn {
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      transition: transform .06s ease, box-shadow .12s ease;
+
+      &:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+    }
+  }
+}
