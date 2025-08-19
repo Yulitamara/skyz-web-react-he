@@ -23,7 +23,7 @@
   }
   img {
     display: flex;
-    width: 80px;
+    width: 60px;
   }
 
   .links {
@@ -89,4 +89,101 @@
       display: flex;
     }
   }
+}
+/* מקום קבוע ליד התפריט */
+.navbar .a11y-slot {
+  display: flex;
+  align-items: center;
+}
+
+/* ברירת המחדל של הווידג'ט היא כפתור צף (position:fixed) – זה טוב למובייל */
+/* בדסקטופ נבטל את ה-fixed כדי שיישב בשורת הניווט */
+@media (min-width: 901px) {
+  .navbar .a11y-slot .a11y-widget {
+    position: relative;   /* עוגן לפאנל */
+    inset: auto;          /* מבטל bottom/right */
+    box-shadow: none;     /* אופציונלי */
+    z-index: 1;
+  }
+}
+
+/* חיזוק למובייל: ודאי שהוא צף בפינה, מעל כל דבר */
+@media (max-width: 900px) {
+  .navbar .a11y-slot .a11y-widget {
+    position: fixed;
+    inset-block-end: 16px;
+    inset-inline-end: 16px;
+    z-index: 9999;
+  }
+}
+/* לא לחתוך דרופדאונים מתוך ההדר */
+.navbar { overflow: visible; }
+
+/* מקום קבוע ליד התפריט לאייקון הנגישות */
+.navbar .a11y-slot {
+  display: flex;
+  align-items: center;
+}
+
+/* ====== נגישות: בדסקטופ הפאנל נפתח למטה מהאייקון ====== */
+@media (min-width: 901px) {
+  .navbar .a11y-slot .a11y-widget {
+    position: relative;      /* מבטל fixed כדי לשבת בשורת הניווט */
+    inset: auto;
+    box-shadow: none;
+    z-index: 2;
+  }
+  .navbar .a11y-slot .a11y-panel {
+    position: absolute;
+    inset-block-start: calc(100% + 8px);  /* מתחת לכפתור */
+    inset-block-end: auto;
+    inset-inline-end: 0;                   /* מיושר לקצה הימני של האייקון */
+    max-height: 70vh;
+    overflow: auto;
+    z-index: 1000;
+  }
+}
+
+/* ====== מובייל: האייקון צף בפינה והפאנל נשאר כמו קודם ====== */
+@media (max-width: 900px) {
+  .navbar .a11y-slot .a11y-widget {
+    position: fixed;
+    inset-block-end: 16px;
+    inset-inline-end: 16px;
+    z-index: 9999;
+  }
+
+  /* האייקון של ההמבורגר צמוד לצד הימני ב-RTL והצד השמאלי ב-LTR */
+  .navbar .menu-icon {
+    display: flex;
+    margin-inline-start: auto;   /* דוחף לקצה ה-end בהתאם לכיוון */
+  }
+
+  /* תפריט צד: RTL נפתח מימין, LTR משמאל */
+  [dir="rtl"] .navbar .links {
+    right: -300px; left: auto;
+    text-align: right;
+    padding-right: 40px; padding-left: 0;
+    position: absolute; top: 8rem;
+    width: 300px; height: 100vh;
+    background-color: var(--background-light);
+    transition: 300ms ease right;
+    flex-direction: column; align-items: start; gap: 0.1rem;
+  }
+  [dir="rtl"] .navbar .links.active { right: 0; }
+
+  [dir="ltr"] .navbar .links {
+    left: -300px; right: auto;
+    text-align: left;
+    padding-left: 40px; padding-right: 0;
+    position: absolute; top: 8rem;
+    width: 300px; height: 100vh;
+    background-color: var(--background-light);
+    transition: 300ms ease left;
+    flex-direction: column; align-items: start; gap: 0.1rem;
+  }
+  [dir="ltr"] .navbar .links.active { left: 0; }
+
+  .navbar .links .lang { margin-top: 20px; }
+  .navbar .links .darkmode-toggle { margin-top: 30px; }
 }

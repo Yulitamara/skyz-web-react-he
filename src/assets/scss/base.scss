@@ -338,8 +338,8 @@ html, body { font-size: calc(16px * var(--a11y-font-scale)); }
 /* כפתור/פאנל */
 .a11y-widget { position: fixed; inset-block-end: 16px; inset-inline-end: 16px; z-index: 9999; }
 .a11y-toggle {
-  width: 44px; height: 44px; border-radius: 999px; border: 1px solid #ccc; background: #fff;
-  box-shadow: 0 4px 14px rgba(0,0,0,.15); font-size: 22px; cursor: pointer;
+  width: 44px; height: 44px; border-radius: 999px; border: none; background: var(--blue); color: var(--white);
+  font-size: 22px; cursor: pointer;
 }
 .a11y-panel {
   position: absolute; inset-inline-end: 0; inset-block-end: 56px;
@@ -496,3 +496,23 @@ html.a11y-contrast select {
 /* אל תשנו תמונות/וידאו במצב ניגודיות */
 html.a11y-contrast img { filter: none !important; background: transparent !important; }
 
+/* --- Accessibility panel: fix huge spacing inherited from navbar line-height --- */
+.a11y-panel {
+  line-height: 1.4;        /* במקום 7rem שנורש מההדר */
+}
+
+.a11y-panel .row {
+  padding-block: 8px;      /* מרווח אנכי נוח */
+  gap: 10px;
+}
+
+.a11y-panel label.row {
+  display: flex;
+  align-items: center;     /* יישור אנכי לטקסט ותיבה */
+}
+
+.a11y-panel input[type="checkbox"] {
+  inline-size: 18px;
+  block-size: 18px;
+  margin: 0;               /* בלי מרווחים מיותרים */
+}

@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
 import ScrollToTop from "./components/ScrollToTop";
-import AccessibilityWidget from "./components/AccessibilityWidget";
 
 
 import Home from "./pages/Home";
@@ -175,7 +174,6 @@ function App() {
           </Routes>
           <Footer />
         </div>
-          <AccessibilityWidget />
 
       </Router>
     </div>

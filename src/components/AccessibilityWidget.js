@@ -83,16 +83,19 @@ export default function AccessibilityWidget() {
 
   return (
     <div className="a11y-widget" aria-live="polite">
-      <button
-        ref={buttonRef}
-        className="a11y-toggle"
-        aria-haspopup="true"
-        aria-expanded={open}
-        aria-label={t("פתיחת תפריט נגישות", "Open accessibility menu")}
-        onClick={() => setOpen((o) => !o)}
-      >
-        ♿
-      </button>
+     <button
+  ref={buttonRef}
+  className="a11y-toggle"
+  aria-haspopup="true"
+  aria-expanded={open}
+  aria-label={t("פתיחת תפריט נגישות", "Open accessibility menu")}
+  onClick={() => setOpen((o) => !o)}
+>
+  <span className="material-symbols-outlined" aria-hidden="true">
+    accessibility
+  </span>
+</button>
+
 
       {open && (
         <div
