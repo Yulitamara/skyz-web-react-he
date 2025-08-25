@@ -35,7 +35,6 @@ const BlogPost = () => {
   if (notFound) {
     return (
       <section dir={dir} className="blog-post">
-        {/* לא משנים את <html> ולא את התפריט */}
         <Helmet>
           <title>{isHe ? "הפוסט לא נמצא" : "Post not found"} | SkyzCRM</title>
           <meta httpEquiv="content-language" content={lang} />
